@@ -18,7 +18,7 @@ class DetailCollectionViewController: UICollectionViewController {
         
         let networkManager = NetworkManager.shared
         
-        networkManager.getCoordinatesForTheCity(for: "Delhi") { coordinates in
+        networkManager.getCoordinatesForTheCity(for: cityName!) { coordinates in
             if let (latitude, longitude) = coordinates {
                 print("Latitude: \(latitude), Longitude: \(longitude)")
             } else {
