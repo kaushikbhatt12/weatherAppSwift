@@ -24,6 +24,7 @@
 		A8083CF12C885F57002E02E3 /* DetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */; };
 		A8083CF22C885F57002E02E3 /* DetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */; };
 		A8083CF42C8995F9002E02E3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A8083CF32C8995F9002E02E3 /* .gitignore */; };
+		A8083CF62C899925002E02E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8083CF52C899925002E02E3 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		A8083CEE2C885F56002E02E3 /* Project-DemoUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project-DemoUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewController.swift; sourceTree = "<group>"; };
 		A8083CF32C8995F9002E02E3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		A8083CF52C899925002E02E3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				A8083CB22C8844C8002E02E3 /* SceneDelegate.h */,
 				A8083CB32C8844C8002E02E3 /* SceneDelegate.m */,
 				A8083CB52C8844C8002E02E3 /* ViewController.h */,
+				A8083CF52C899925002E02E3 /* NetworkManager.swift */,
 				A8083CB62C8844C8002E02E3 /* ViewController.m */,
 				A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */,
 				A8083CB82C8844C8002E02E3 /* Main.storyboard */,
@@ -292,6 +295,7 @@
 				A8083CC52C8844CB002E02E3 /* main.m in Sources */,
 				A8083CE92C884D67002E02E3 /* CityModel.xcdatamodeld in Sources */,
 				A8083CB72C8844C8002E02E3 /* ViewController.m in Sources */,
+				A8083CF62C899925002E02E3 /* NetworkManager.swift in Sources */,
 				A8083CF02C885F57002E02E3 /* DetailCollectionViewController.swift in Sources */,
 				A8083CB12C8844C8002E02E3 /* AppDelegate.m in Sources */,
 				A8083CB42C8844C8002E02E3 /* SceneDelegate.m in Sources */,
