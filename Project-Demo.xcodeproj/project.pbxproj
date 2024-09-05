@@ -101,6 +101,7 @@
 		A8083CA32C8844C8002E02E3 = {
 			isa = PBXGroup;
 			children = (
+				A8083CFB2C89B0C8002E02E3 /* Network Manager */,
 				A8083CF82C89A709002E02E3 /* Types */,
 				A8083CF72C89A65F002E02E3 /* CoreDataModels */,
 				A8083CAE2C8844C8002E02E3 /* Project-Demo */,
@@ -129,7 +130,6 @@
 				A8083CB22C8844C8002E02E3 /* SceneDelegate.h */,
 				A8083CB32C8844C8002E02E3 /* SceneDelegate.m */,
 				A8083CB52C8844C8002E02E3 /* ViewController.h */,
-				A8083CF52C899925002E02E3 /* NetworkManager.swift */,
 				A8083CB62C8844C8002E02E3 /* ViewController.m */,
 				A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */,
 				A8083CB82C8844C8002E02E3 /* Main.storyboard */,
@@ -175,6 +175,14 @@
 				A8083CF92C89A737002E02E3 /* dataTypes.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		A8083CFB2C89B0C8002E02E3 /* Network Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A8083CF52C899925002E02E3 /* NetworkManager.swift */,
+			);
+			path = "Network Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
