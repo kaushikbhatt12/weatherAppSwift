@@ -23,6 +23,7 @@
 		A8083CF02C885F57002E02E3 /* DetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */; };
 		A8083CF12C885F57002E02E3 /* DetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */; };
 		A8083CF22C885F57002E02E3 /* DetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */; };
+		A8083CF42C8995F9002E02E3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A8083CF32C8995F9002E02E3 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		A8083CED2C885F56002E02E3 /* Project-DemoTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project-DemoTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A8083CEE2C885F56002E02E3 /* Project-DemoUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project-DemoUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewController.swift; sourceTree = "<group>"; };
+		A8083CF32C8995F9002E02E3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		A8083CAE2C8844C8002E02E3 /* Project-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				A8083CF32C8995F9002E02E3 /* .gitignore */,
 				A8083CE72C884D67002E02E3 /* CityModel.xcdatamodeld */,
 				A8083CAF2C8844C8002E02E3 /* AppDelegate.h */,
 				A8083CB02C8844C8002E02E3 /* AppDelegate.m */,
@@ -258,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8083CF42C8995F9002E02E3 /* .gitignore in Resources */,
 				A8083CBF2C8844CB002E02E3 /* Assets.xcassets in Resources */,
 				A8083CC22C8844CB002E02E3 /* Base in Resources */,
 				A8083CBA2C8844C8002E02E3 /* Base in Resources */,
