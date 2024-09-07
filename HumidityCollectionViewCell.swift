@@ -9,7 +9,6 @@ import UIKit
 
 class HumidityCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
     
     @IBOutlet weak var humidityLabel: UILabel!
     
@@ -20,7 +19,7 @@ class HumidityCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with humidity: String, backgroundImage: UIImage) {
-        humidityLabel.text = "Humidity - \(humidity)%"
+        humidityLabel.text = "Humidity \n \(humidity)%"
 //        backgroundImageView.image = backgroundImage
     }
 }
