@@ -12,6 +12,20 @@ struct CityResponse: Codable {
     let lon: Double
 }
 
+struct WeatherData: Codable {
+    let timestamp : Date
+    let cityName : String
+    let humidity : String
+    let temperature : String
+    let windspeed : String
+}
+
+struct WeatherCardData {
+    let type: String
+    let value: String
+    let image: String?
+}
+
 struct WeatherResponse: Codable {
     let coord: Coord
     let weather: [Weather]

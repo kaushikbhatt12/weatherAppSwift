@@ -26,6 +26,9 @@
 		A8083CF42C8995F9002E02E3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A8083CF32C8995F9002E02E3 /* .gitignore */; };
 		A8083CF62C899925002E02E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8083CF52C899925002E02E3 /* NetworkManager.swift */; };
 		A8083CFA2C89A737002E02E3 /* dataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8083CF92C89A737002E02E3 /* dataTypes.swift */; };
+		A83C0F5D2C8B338A0046D1D6 /* WindCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C0F5C2C8B338A0046D1D6 /* WindCollectionViewCell.swift */; };
+		A8E4D8EF2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E4D8EE2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift */; };
+		A8E4D8F12C8AE2A40053AAF8 /* HumidityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E4D8F02C8AE2A40053AAF8 /* HumidityCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		A8083CF32C8995F9002E02E3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		A8083CF52C899925002E02E3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A8083CF92C89A737002E02E3 /* dataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataTypes.swift; sourceTree = "<group>"; };
+		A83C0F5C2C8B338A0046D1D6 /* WindCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		A8E4D8EE2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureCollectionViewCell.swift; sourceTree = "<group>"; };
+		A8E4D8F02C8AE2A40053AAF8 /* HumidityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,8 @@
 		A8083CAE2C8844C8002E02E3 /* Project-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				A83C0F5C2C8B338A0046D1D6 /* WindCollectionViewCell.swift */,
+				A8E4D8F02C8AE2A40053AAF8 /* HumidityCollectionViewCell.swift */,
 				A8083CAF2C8844C8002E02E3 /* AppDelegate.h */,
 				A8083CB02C8844C8002E02E3 /* AppDelegate.m */,
 				A8083CB22C8844C8002E02E3 /* SceneDelegate.h */,
@@ -133,6 +141,7 @@
 				A8083CB62C8844C8002E02E3 /* ViewController.m */,
 				A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */,
 				A8083CB82C8844C8002E02E3 /* Main.storyboard */,
+				A8E4D8EE2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift */,
 				A8083CBE2C8844CB002E02E3 /* Assets.xcassets */,
 				A8083CC02C8844CB002E02E3 /* LaunchScreen.storyboard */,
 				A8083CC32C8844CB002E02E3 /* Info.plist */,
@@ -319,9 +328,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8E4D8F12C8AE2A40053AAF8 /* HumidityCollectionViewCell.swift in Sources */,
 				A8083CC52C8844CB002E02E3 /* main.m in Sources */,
 				A8083CFA2C89A737002E02E3 /* dataTypes.swift in Sources */,
+				A83C0F5D2C8B338A0046D1D6 /* WindCollectionViewCell.swift in Sources */,
 				A8083CE92C884D67002E02E3 /* CityModel.xcdatamodeld in Sources */,
+				A8E4D8EF2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift in Sources */,
 				A8083CB72C8844C8002E02E3 /* ViewController.m in Sources */,
 				A8083CF62C899925002E02E3 /* NetworkManager.swift in Sources */,
 				A8083CF02C885F57002E02E3 /* DetailCollectionViewController.swift in Sources */,

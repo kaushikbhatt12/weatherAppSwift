@@ -13,12 +13,14 @@ class DetailCollectionViewController: UICollectionViewController {
     
     @objc var cityName : String?
 
+    var weatherCardDataArray: [WeatherCardData] = []
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let networkManager = NetworkManager.shared
+        print("Collection View Frame: \(collectionView.frame)") 
         
-        // fetching coordinates
         NetworkManager.shared.getCoordinatesForTheCity(for: cityName!) { coordinates in
             DispatchQueue.main.async {
                 if let (latitude, longitude) = coordinates {
@@ -29,18 +31,26 @@ class DetailCollectionViewController: UICollectionViewController {
                         NetworkManager.shared.fetchWeatherData(for: latitude, longitude: longitude) { weatherResponse in
                             DispatchQueue.main.async {
                                 if let weatherResponse = weatherResponse {
-                                    print("City: \(weatherResponse.name)")
-                                    print("Country: \(weatherResponse.sys.country)")
-                                    print("Temperature: \(weatherResponse.main.temp)K")
-                                    print("Humidity: \(weatherResponse.main.humidity)%")
-                                    print("Weather: \(weatherResponse.weather.first?.main ?? "") - \(weatherResponse.weather.first?.description ?? "")")
-                                    print("Wind Speed: \(weatherResponse.wind.speed)m/s")
-                                    print("Sunrise: \(weatherResponse.sys.sunrise)")
-                                    print("Sunset: \(weatherResponse.sys.sunset)")
-                                    
-                                    // Update your UI elements here
-                                    // For example:
-                                    // self.updateWeatherCards(with: weatherResponse)
+                                    self.weatherCardDataArray = [
+                                        WeatherCardData(type: "Temperature", value: "\(weatherResponse.main.temp)", image: weatherResponse.weather[0].icon)
+//                                    WeatherCardData(type: "Humidity", value: "\(weatherResponse.main.humidity)"),
+//                                    WeatherCardData(type: "Wind Speed", value: "\(weatherResponse.wind.speed)m/s")
+                                    ]
+
+                                    self.collectionView.reloadData()
+//                                    print("City: \(weatherResponse.name)")
+//                                    print("Country: \(weatherResponse.sys.country)")
+//                                    print("Temperature: \(weatherResponse.main.temp)K")
+//                                    print("Image: \(weatherResponse.weather[0].icon)")
+//                                    print("Humidity: \(weatherResponse.main.humidity)%")
+//                                    print("Weather: \(weatherResponse.weather.first?.main ?? "") - \(weatherResponse.weather.first?.description ?? "")")
+//                                    print("Wind Speed: \(weatherResponse.wind.speed)m/s")
+//                                    print("Sunrise: \(weatherResponse.sys.sunrise)")
+//                                    print("Sunset: \(weatherResponse.sys.sunset)")
+//
+//                                    // Update your UI elements here
+//                                    // For example:
+//                                    // self.updateWeatherCards(with: weatherResponse)
                                 } else {
                                     print("Failed to fetch weather data")
                                 }
@@ -61,7 +71,6 @@ class DetailCollectionViewController: UICollectionViewController {
         // Register cell classes
         self.navigationItem.title = cityName
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
         // Do any additional setup after loading the view.
     }
 
@@ -85,15 +94,35 @@ class DetailCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 4
+        return weatherCardDataArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-        return cell
+        let weatherData = weatherCardDataArray[indexPath.row]
+            
+            switch weatherData.type {
+            case "Temperature":
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Temperature", for: indexPath) as! TemperatureCollectionViewCell
+                cell.configure(with: weatherData.value, imageParameter: weatherData.image!)
+                return cell
+//            case "Humidity":
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Humidity", for: indexPath) as! HumidityCollectionViewCell
+//                cell.configure(with: weatherData.value, backgroundImage: UIImage(named: "temperature2")!)
+//                return cell
+//            case "Wind Speed":
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Wind", for: indexPath) as! WindCollectionViewCell
+//                cell.configure(with: weatherData.value, backgroundImage: UIImage(named: "temperature2")!)
+//                return cell
+            // Handle other cases similarly
+            default:
+                return UICollectionViewCell()
+            }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+         let width = collectionView.frame.width // Set width equal to collection view's width
+         return CGSize(width: width, height: 150) // Set height to 150
+     }
 
     // MARK: UICollectionViewDelegate
 
