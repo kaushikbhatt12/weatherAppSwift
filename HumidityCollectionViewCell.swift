@@ -9,8 +9,7 @@ import UIKit
 
 class HumidityCollectionViewCell: UICollectionViewCell {
     
-
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     @IBOutlet weak var humidityLabel: UILabel!
     
@@ -20,23 +19,8 @@ class HumidityCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 10
     }
     
-    func configure(with temperature: String, imageParameter: String) {
-        humidityLabel.text = "\(temperature)°K"
-        DispatchQueue.global(qos: .background).async {
-            let urlString = "http://openweathermap.org/img/w/\(imageParameter).png"
-            
-            guard let url = URL(string: urlString) else { return }
-            
-            let task = URLSession.shared.dataTask(with: url) { data, response, error in
-                if let data = data, error == nil {
-                    DispatchQueue.main.async {
-//                        self.imageView.image = UIImage(data: data)
-                        self.imageView.image = UIImage(named: "temperature2")
-                    }
-                }
-            }
-            
-            task.resume()
-        }
+    func configure(with humidity: String, backgroundImage: UIImage) {
+        humidityLabel.text = "Humidity - \(humidity)%"
+//        backgroundImageView.image = backgroundImage
     }
 }
