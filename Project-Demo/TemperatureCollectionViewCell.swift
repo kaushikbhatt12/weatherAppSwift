@@ -43,7 +43,8 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data, error == nil {
                     DispatchQueue.main.async {
-                        self.imageView.image = UIImage(data: data)
+//                        self.imageView.image = UIImage(data: data)
+                        self.imageView.image = UIImage(named: "temperature2")
                     }
                 }
             }
