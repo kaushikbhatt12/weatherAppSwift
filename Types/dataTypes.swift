@@ -12,7 +12,7 @@ struct CityResponse: Codable {
     let lon: Double
 }
 
-struct WeatherData: Codable {
+struct WeatherDataModel: Codable {
     let timestamp : Date
     let cityName : String
     let humidity : String

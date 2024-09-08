@@ -19,49 +19,63 @@ class DetailCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        NetworkManager.shared.getCoordinatesForTheCity(for: cityName!) { coordinates in
-            DispatchQueue.main.async {
-                if let (latitude, longitude) = coordinates {
-                    print("Latitude: \(latitude), Longitude: \(longitude)")
-                    
-                    // Fetch weather data on a background queue
-                    DispatchQueue.global(qos: .background).async {
-                        NetworkManager.shared.fetchWeatherData(for: latitude, longitude: longitude) { weatherResponse in
-                            DispatchQueue.main.async {
-                                if let weatherResponse = weatherResponse {
-                                    self.weatherCardDataArray = [
-                                        WeatherCardData(type: "Temperature", value: "\(weatherResponse.main.temp)", image: weatherResponse.weather[0].icon),
-                                        WeatherCardData(type: "Humidity", value: "\(weatherResponse.main.humidity)", image: weatherResponse.weather[0].icon),
-                                        WeatherCardData(type: "Wind", value: "\(weatherResponse.wind.speed)m/s",image: weatherResponse.weather[0].icon),
-                                        WeatherCardData(type: "Sunrise", value: "\(weatherResponse.sys.sunrise)",image: weatherResponse.weather[0].icon),
-                                        WeatherCardData(type: "Sunset", value: "\(weatherResponse.sys.sunset)",image: weatherResponse.weather[0].icon)
-                                    ]
-
-                                    self.collectionView.reloadData()
-//                                    print("City: \(weatherResponse.name)")
-//                                    print("Country: \(weatherResponse.sys.country)")
-//                                    print("Temperature: \(weatherResponse.main.temp)K")
-//                                    print("Image: \(weatherResponse.weather[0].icon)")
-//                                    print("Humidity: \(weatherResponse.main.humidity)%")
-//                                    print("Weather: \(weatherResponse.weather.first?.main ?? "") - \(weatherResponse.weather.first?.description ?? "")")
-//                                    print("Wind Speed: \(weatherResponse.wind.speed)m/s")
-//                                    print("Sunrise: \(weatherResponse.sys.sunrise)")
-//                                    print("Sunset: \(weatherResponse.sys.sunset)")
-//
-//                                    // Update your UI elements here
-//                                    // For example:
-//                                    // self.updateWeatherCards(with: weatherResponse)
-                                } else {
-                                    print("Failed to fetch weather data")
-                                }
-                            }
-                        }
-                    }
-                } else {
-                    print("Failed to fetch coordinates")
-                }
-            }
+        WeatherDataManager.shared.getWeatherData(for: cityName!) { weatherDataModel in
+            if let weatherData = weatherDataModel {
+                // Handle the fetched weather data
+                print("City: \(weatherData.cityName)")
+                print("Temperature: \(weatherData.temperature)°C")
+                print("Humidity: \(weatherData.humidity)%")
+                print("Windspeed: \(weatherData.windspeed) m/s")
+            } 
         }
+        
+        
+        
+        
+        
+//        NetworkManager.shared.getCoordinatesForTheCity(for: cityName!) { coordinates in
+//            DispatchQueue.main.async {
+//                if let (latitude, longitude) = coordinates {
+//                    print("Latitude: \(latitude), Longitude: \(longitude)")
+//                    
+//                    // Fetch weather data on a background queue
+//                    DispatchQueue.global(qos: .background).async {
+//                        NetworkManager.shared.fetchWeatherData(for: latitude, longitude: longitude) { weatherResponse in
+//                            DispatchQueue.main.async {
+//                                if let weatherResponse = weatherResponse {
+//                                    self.weatherCardDataArray = [
+//                                        WeatherCardData(type: "Temperature", value: "\(weatherResponse.main.temp)", image: weatherResponse.weather[0].icon),
+//                                        WeatherCardData(type: "Humidity", value: "\(weatherResponse.main.humidity)", image: weatherResponse.weather[0].icon),
+//                                        WeatherCardData(type: "Wind", value: "\(weatherResponse.wind.speed)m/s",image: weatherResponse.weather[0].icon),
+//                                        WeatherCardData(type: "Sunrise", value: "\(weatherResponse.sys.sunrise)",image: weatherResponse.weather[0].icon),
+//                                        WeatherCardData(type: "Sunset", value: "\(weatherResponse.sys.sunset)",image: weatherResponse.weather[0].icon)
+//                                    ]
+//
+//                                    self.collectionView.reloadData()
+////                                    print("City: \(weatherResponse.name)")
+////                                    print("Country: \(weatherResponse.sys.country)")
+////                                    print("Temperature: \(weatherResponse.main.temp)K")
+////                                    print("Image: \(weatherResponse.weather[0].icon)")
+////                                    print("Humidity: \(weatherResponse.main.humidity)%")
+////                                    print("Weather: \(weatherResponse.weather.first?.main ?? "") - \(weatherResponse.weather.first?.description ?? "")")
+////                                    print("Wind Speed: \(weatherResponse.wind.speed)m/s")
+////                                    print("Sunrise: \(weatherResponse.sys.sunrise)")
+////                                    print("Sunset: \(weatherResponse.sys.sunset)")
+////
+////                                    // Update your UI elements here
+////                                    // For example:
+////                                    // self.updateWeatherCards(with: weatherResponse)
+//                                } else {
+//                                    print("Failed to fetch weather data")
+//                                }
+//                            }
+//                        }
+//                    }
+//                } else {
+//                    print("Failed to fetch coordinates")
+//                }
+//            }
+//        }
 
     
 
