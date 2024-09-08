@@ -18,8 +18,7 @@ class WindCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 10
     }
     
-    func configure(with wind: String, backgroundImage: UIImage) {
+    func configure(with wind: String, backgroundImage: UIImage?) {
         windLabel.text = "Wind Speed \n \(wind)"
-//        backgroundImageView.image = backgroundImage
     }
 }

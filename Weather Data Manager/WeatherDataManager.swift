@@ -22,6 +22,7 @@ class WeatherDataManager {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "City")
         fetchRequest.predicate = NSPredicate(format: "name == [c] %@", cityName)
         
+        
         do {
             if let result = try context.fetch(fetchRequest) as? [City], let city = result.first {
                 if let currentWeather = city.weather {
@@ -37,9 +38,11 @@ class WeatherDataManager {
                         let weatherDataModel = WeatherDataModel(
                             timestamp: currentWeather.timestamp!,
                             cityName: city.name!,
-                            humidity: String(currentWeather.humidity),
-                            temperature: String(currentWeather.temperature),
-                            windspeed: String(currentWeather.windspeed)
+                            humidity: currentWeather.humidity,
+                            temperature: currentWeather.temperature,
+                            windspeed: currentWeather.windspeed,
+                            sunset: currentWeather.sunset,
+                            sunrise: currentWeather.sunrise
                         )
                         completion(weatherDataModel)
                     }
@@ -65,7 +68,6 @@ class WeatherDataManager {
     }
     
     func fetchDataFromApi(for cityName: String,completion: @escaping (WeatherDataModel?) -> Void){
-        print("api call made")
         networkManager.getCoordinatesForTheCity(for: cityName) { coordinates in
             if let (long,lat) = coordinates {
                 self.networkManager.fetchWeatherData(for: long, longitude: lat) { WeatherResponse in
@@ -73,9 +75,11 @@ class WeatherDataManager {
                         let weatherDataModel = WeatherDataModel(
                             timestamp: Date(),
                             cityName: cityName,
-                            humidity: String(weatherResponse.main.humidity),
-                            temperature: String(weatherResponse.main.temp),
-                            windspeed: String(weatherResponse.wind.speed)
+                            humidity: Int32(weatherResponse.main.humidity),
+                            temperature: weatherResponse.main.temp,
+                            windspeed: weatherResponse.wind.speed,
+                            sunset: Int32(weatherResponse.sys.sunset),
+                            sunrise: Int32(weatherResponse.sys.sunrise)
                         )
                         completion(weatherDataModel)
                     }
@@ -94,9 +98,11 @@ class WeatherDataManager {
             city.name = cityName
             
             let weather = WeatherData(context: context)
-            weather.temperature = Double(weatherData.temperature)!
-            weather.humidity = Double(weatherData.humidity)!
-            weather.windspeed = Double(weatherData.windspeed)!
+            weather.temperature = weatherData.temperature
+            weather.humidity = Int32(weatherData.humidity)
+            weather.windspeed = weatherData.windspeed
+            weather.sunset = Int32(weatherData.sunset)
+            weather.sunrise = Int32(weatherData.sunrise)
             weather.timestamp = Date()
             
             city.weather = weather

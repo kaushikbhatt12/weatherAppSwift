@@ -2,7 +2,7 @@
 //  WeatherData+CoreDataProperties.swift
 //  Project-Demo
 //
-//  Created by kaushik.bha on 08/09/24.
+//  Created by kaushik.bha on 09/09/24.
 //
 //
 
@@ -16,10 +16,12 @@ extension WeatherData {
         return NSFetchRequest<WeatherData>(entityName: "WeatherData")
     }
 
-    @NSManaged public var humidity: Double
+    @NSManaged public var humidity: Int32
     @NSManaged public var temperature: Double
     @NSManaged public var timestamp: Date?
     @NSManaged public var windspeed: Double
+    @NSManaged public var sunrise: Int32
+    @NSManaged public var sunset: Int32
     @NSManaged public var weather: City?
 
 }

@@ -19,7 +19,7 @@ class SunsetCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 10
     }
     
-    func configure(with sunset: String, backgroundImage: UIImage) {
+    func configure(with sunset: String, backgroundImage: UIImage?) {
         if let sunsetTimestamp = TimeInterval(sunset)
         {
             let sunsetDate = Date(timeIntervalSince1970: sunsetTimestamp)

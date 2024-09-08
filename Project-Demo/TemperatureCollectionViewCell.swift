@@ -24,7 +24,7 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func configure(with temperature: String, imageParameter: String) {
+    func configure(with temperature: String, imageParameter: String?) {
         if let kelvin = Double(temperature) {
             let celsius = kelvin - 273.15
             temperatureLabel.text = String(format: "Temperature \n %.1f°C", celsius)

@@ -18,7 +18,7 @@ class HumidityCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 10
     }
     
-    func configure(with humidity: String, backgroundImage: UIImage) {
+    func configure(with humidity: String, backgroundImage: UIImage?) {
         humidityLabel.text = "Humidity \n \(humidity)%"
 //        backgroundImageView.image = backgroundImage
     }

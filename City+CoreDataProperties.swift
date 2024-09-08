@@ -2,7 +2,7 @@
 //  City+CoreDataProperties.swift
 //  Project-Demo
 //
-//  Created by kaushik.bha on 08/09/24.
+//  Created by kaushik.bha on 09/09/24.
 //
 //
 
