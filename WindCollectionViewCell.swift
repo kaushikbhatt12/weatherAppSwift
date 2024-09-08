@@ -9,7 +9,6 @@ import UIKit
 
 class WindCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
     
     @IBOutlet weak var windLabel: UILabel!
     
@@ -20,7 +19,7 @@ class WindCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with wind: String, backgroundImage: UIImage) {
-        windLabel.text = "Wind Speed - \(wind)"
+        windLabel.text = "Wind Speed \n \(wind)"
 //        backgroundImageView.image = backgroundImage
     }
 }

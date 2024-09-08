@@ -18,7 +18,7 @@ class DetailCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         NetworkManager.shared.getCoordinatesForTheCity(for: cityName!) { coordinates in
             DispatchQueue.main.async {
                 if let (latitude, longitude) = coordinates {
@@ -31,8 +31,10 @@ class DetailCollectionViewController: UICollectionViewController {
                                 if let weatherResponse = weatherResponse {
                                     self.weatherCardDataArray = [
                                         WeatherCardData(type: "Temperature", value: "\(weatherResponse.main.temp)", image: weatherResponse.weather[0].icon),
-                                    WeatherCardData(type: "Humidity", value: "\(weatherResponse.main.humidity)", image: weatherResponse.weather[0].icon)
-//                                    WeatherCardData(type: "Wind Speed", value: "\(weatherResponse.wind.speed)m/s")
+                                        WeatherCardData(type: "Humidity", value: "\(weatherResponse.main.humidity)", image: weatherResponse.weather[0].icon),
+                                        WeatherCardData(type: "Wind", value: "\(weatherResponse.wind.speed)m/s",image: weatherResponse.weather[0].icon),
+                                        WeatherCardData(type: "Sunrise", value: "\(weatherResponse.sys.sunrise)",image: weatherResponse.weather[0].icon),
+                                        WeatherCardData(type: "Sunset", value: "\(weatherResponse.sys.sunset)",image: weatherResponse.weather[0].icon)
                                     ]
 
                                     self.collectionView.reloadData()
@@ -107,10 +109,18 @@ class DetailCollectionViewController: UICollectionViewController {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Humidity", for: indexPath) as! HumidityCollectionViewCell
                 cell.configure(with: weatherData.value, backgroundImage: UIImage(named: "temperature2")!)
                 return cell
-//            case "Wind Speed":
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Wind", for: indexPath) as! WindCollectionViewCell
-//                cell.configure(with: weatherData.value, backgroundImage: UIImage(named: "temperature2")!)
-//                return cell
+            case "Wind":
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Wind", for: indexPath) as! WindCollectionViewCell
+                cell.configure(with: weatherData.value, backgroundImage: UIImage(named: "temperature2")!)
+                return cell
+            case "Sunrise":
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Sunrise", for: indexPath) as! SunriseCollectionViewCell
+                cell.configure(with: weatherData.value, backgroundImage: UIImage(named: "temperature2")!)
+                return cell
+            case "Sunset":
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Sunset", for: indexPath) as! SunsetCollectionViewCell
+                cell.configure(with: weatherData.value, backgroundImage: UIImage(named: "temperature2")!)
+                return cell
             // Handle other cases similarly
             default:
                 return UICollectionViewCell()
@@ -158,6 +168,6 @@ class DetailCollectionViewController: UICollectionViewController {
 
 extension DetailCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width-10, height: 150)
+        return CGSize(width: collectionView.frame.width-10, height: 200)
     }
 }
