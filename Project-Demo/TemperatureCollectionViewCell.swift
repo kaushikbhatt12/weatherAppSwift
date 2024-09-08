@@ -25,7 +25,10 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with temperature: String, imageParameter: String) {
-        temperatureLabel.text = "Temperature \n \(temperature)°K"
+        if let kelvin = Double(temperature) {
+            let celsius = kelvin - 273.15
+            temperatureLabel.text = String(format: "Temperature \n %.1f°C", celsius)
+        }
 //        DispatchQueue.global(qos: .background).async {
 //            let urlString = "http://openweathermap.org/img/w/\(imageParameter).png"
 //            
