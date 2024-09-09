@@ -27,11 +27,11 @@ class DetailCollectionViewController: UICollectionViewController {
                 self.spinner.stopAnimating()
                 if let weatherData = weatherDataModel {
                     self.weatherCardDataArray = [
-                        WeatherCardData(type: "Temperature", value: "\(weatherData.temperature)", image: nil),
-                        WeatherCardData(type: "Humidity", value: "\(weatherData.humidity)", image: nil),
-                        WeatherCardData(type: "Wind", value: "\(weatherData.windspeed)",image: nil),
-                        WeatherCardData(type: "Sunrise", value: "\(weatherData.sunrise)",image: nil),
-                        WeatherCardData(type: "Sunset", value: "\(weatherData.sunset)",image: nil)
+                        WeatherCardData(type: "Temperature", value: "\(weatherData.temperature)", image: weatherData.weatherIcon, description: weatherData.weatherDescription),
+                        WeatherCardData(type: "Humidity", value: "\(weatherData.humidity)", image: nil, description: nil),
+                        WeatherCardData(type: "Wind", value: "\(weatherData.windspeed)",image: nil, description: nil),
+                        WeatherCardData(type: "Sunrise", value: "\(weatherData.sunrise)",image: nil, description: nil),
+                        WeatherCardData(type: "Sunset", value: "\(weatherData.sunset)",image: nil, description: nil)
                     ]
                     self.collectionView.reloadData()
                 }
@@ -84,7 +84,7 @@ class DetailCollectionViewController: UICollectionViewController {
             switch weatherData.type {
             case "Temperature":
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Temperature", for: indexPath) as! TemperatureCollectionViewCell
-                cell.configure(with: weatherData.value, imageParameter: weatherData.image)
+                cell.configure(with: weatherData.value, imageParameter: weatherData.image, description: weatherData.description)
                 return cell
             case "Humidity":
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Humidity", for: indexPath) as! HumidityCollectionViewCell

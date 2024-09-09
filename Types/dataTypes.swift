@@ -20,12 +20,15 @@ struct WeatherDataModel: Codable {
     let windspeed : Double
     let sunset : Int32
     let sunrise : Int32
+    let weatherIcon : String
+    let weatherDescription : String
 }
 
 struct WeatherCardData {
     let type: String
     let value: String
     let image: String?
+    let description: String?
 }
 
 struct WeatherResponse: Codable {

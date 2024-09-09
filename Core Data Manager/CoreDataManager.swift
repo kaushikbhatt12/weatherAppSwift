@@ -82,6 +82,8 @@ import CoreData
             weather.windspeed = weatherData.windspeed
             weather.sunset = Int32(weatherData.sunset)
             weather.sunrise = Int32(weatherData.sunrise)
+            weather.weatherIcon = weatherData.weatherIcon
+            weather.weatherDescription = weatherData.weatherDescription
             weather.timestamp = Date()
             
             city.weather = weather

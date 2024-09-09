@@ -37,7 +37,9 @@ class WeatherDataManager {
                             temperature: currentWeather.temperature,
                             windspeed: currentWeather.windspeed,
                             sunset: currentWeather.sunset,
-                            sunrise: currentWeather.sunrise
+                            sunrise: currentWeather.sunrise,
+                            weatherIcon: currentWeather.weatherIcon!,
+                            weatherDescription: currentWeather.weatherDescription!
                         )
                         completion(weatherDataModel)
                     }
@@ -80,7 +82,9 @@ class WeatherDataManager {
                             temperature: weatherResponse.main.temp,
                             windspeed: weatherResponse.wind.speed,
                             sunset: Int32(weatherResponse.sys.sunset),
-                            sunrise: Int32(weatherResponse.sys.sunrise)
+                            sunrise: Int32(weatherResponse.sys.sunrise),
+                            weatherIcon: weatherResponse.weather[0].icon,
+                            weatherDescription: weatherResponse.weather[0].main + " - " + weatherResponse.weather[0].description
                         )
                         completion(weatherDataModel)
                     }

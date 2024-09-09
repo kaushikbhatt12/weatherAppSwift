@@ -11,6 +11,10 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var temperatureLabel: UILabel!
     
+    @IBOutlet weak var weatherDescriptionLabel: UILabel!
+    
+    @IBOutlet weak var weatherIcon: UIImageView!
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         // Adjust the frame or bounds if necessary
@@ -24,25 +28,30 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func configure(with temperature: String, imageParameter: String?) {
+    func configure(with temperature: String, imageParameter: String?, description: String?) {
         if let kelvin = Double(temperature) {
             let celsius = kelvin - 273.15
-            temperatureLabel.text = String(format: "Temperature \n %.1f°C", celsius)
+            temperatureLabel.text = String(format: " %.1f°C", celsius)
         }
-//        DispatchQueue.global(qos: .background).async {
-//            let urlString = "http://openweathermap.org/img/w/\(imageParameter).png"
-//            
-//            guard let url = URL(string: urlString) else { return }
-//            
-//            let task = URLSession.shared.dataTask(with: url) { data, response, error in
-//                if let data = data, error == nil {
-//                    DispatchQueue.main.async {
-//                        self.imageView.image = UIImage(data: data)
-//                    }
-//                }
-//            }
-            
-//            task.resume()
-//        }
+        if let description = description {
+            weatherDescriptionLabel.text = description
+        }
+        if let imageParameter = imageParameter {
+            DispatchQueue.global(qos: .background).async {
+                let urlString = "http://openweathermap.org/img/w/\(imageParameter).png"
+                
+                guard let url = URL(string: urlString) else { return }
+                
+                let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                    if let data = data, error == nil {
+                        DispatchQueue.main.async {
+                            self.weatherIcon.image = UIImage(data: data)
+                        }
+                    }
+                }
+                
+                task.resume()
+            }
+        }
     }
 }
