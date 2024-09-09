@@ -11,25 +11,23 @@
 
 + (NSArray *)cityNames {
     return @[
-        @"New York", @"Los Angeles", @"Chicago", @"Houston", @"Phoenix",
-        @"Philadelphia", @"San Antonio", @"San Diego", @"Dallas", @"San Jose",
-        @"Austin", @"Jacksonville", @"Fort Worth", @"Columbus", @"Charlotte",
-        @"San Francisco", @"Indianapolis", @"Seattle", @"Denver", @"Washington",
-        @"Boston", @"El Paso", @"Nashville", @"Detroit", @"Oklahoma City",
-        @"Portland", @"Las Vegas", @"Memphis", @"Louisville", @"Baltimore",
-        @"Milwaukee", @"Albuquerque", @"Tucson", @"Fresno", @"Sacramento",
-        @"Mesa", @"Kansas City", @"Atlanta", @"Omaha", @"Raleigh",
-        @"Miami", @"Long Beach", @"Virginia Beach", @"Oakland", @"Minneapolis",
-        @"Tulsa", @"Arlington", @"Tampa", @"New Orleans", @"Wichita",
-        @"Cleveland", @"Bakersfield", @"Aurora", @"Anaheim", @"Honolulu",
-        @"Santa Ana", @"Riverside", @"Corpus Christi", @"Lexington", @"Stockton",
-        @"Henderson", @"Saint Paul", @"St. Louis", @"Cincinnati", @"Pittsburgh",
-        @"Greensboro", @"Anchorage", @"Plano", @"Lincoln", @"Orlando",
-        @"Irvine", @"Newark", @"Durham", @"Chula Vista", @"Toledo",
-        @"Fort Wayne", @"St. Petersburg", @"Laredo", @"Jersey City", @"Chandler",
-        @"Madison", @"Lubbock", @"Scottsdale", @"Reno", @"Buffalo",
-        @"Gilbert", @"Glendale", @"North Las Vegas", @"Winston-Salem", @"Chesapeake",
-        @"Norfolk", @"Fremont", @"Garland", @"Irving", @"Hialeah"
+        @"London", @"Paris", @"Berlin", @"Madrid", @"Rome", @"Vienna", @"Amsterdam",
+            @"Brussels", @"Stockholm", @"Copenhagen", @"Oslo", @"Helsinki", @"Warsaw",
+            @"Prague", @"Budapest", @"Zurich", @"Milan", @"Athens", @"Lisbon", @"Dublin", 
+            @"Barcelona", @"Munich", @"Frankfurt", @"Edinburgh", @"Hamburg", @"Lyon",
+            @"Warsaw",@"New York", @"Los Angeles", @"Chicago", @"Houston", @"Phoenix",@"Philadelphia",
+            @"San Antonio", @"San Diego", @"Dallas", @"San Jose", @"Austin", @"Jacksonville",
+            @"San Francisco",@"Seattle", @"Denver", @"Washington D.C.", @"Boston", @"Nashville", @"Detroit",
+            @"Oklahoma City", @"Portland", @"Las Vegas",@"Atlanta", @"Miami",
+            @"Tokyo", @"Osaka", @"Seoul", @"Busan", @"Shanghai", @"Beijing", @"Shenzhen",
+            @"Guangzhou", @"Hong Kong", @"Taipei", @"Wuhan",@"Mumbai", @"Delhi", @"Bangalore",
+            @"Chennai", @"Hyderabad", @"Kolkata",
+            @"Ahmedabad", @"Pune", @"Jaipur", @"Lucknow", @"Kanpur", @"Nagpur", @"Indore",
+            @"Patna", @"Bhopal", @"Ludhiana", @"Agra", @"Nashik", @"Vadodara", @"Meerut",
+            @"Rajkot", @"Varanasi", @"Srinagar", @"Aurangabad", @"Dhanbad", @"Amritsar",
+            @"Navi Mumbai", @"Allahabad", @"Gwalior", @"Jabalpur", @"Coimbatore",
+            @"Vijayawada", @"Jodhpur", @"Madurai", @"Raipur", @"Chandigarh", @"Guwahati",
+            @"Mysore", @"Tiruchirappalli", @"Tiruppur", @"Salem", @"Warangal", @"Mangalore"
     ];
 }
 
