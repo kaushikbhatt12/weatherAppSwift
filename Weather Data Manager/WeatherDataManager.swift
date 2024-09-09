@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CoreData
 import UIKit
 
 class WeatherDataManager {
@@ -15,22 +14,18 @@ class WeatherDataManager {
     private init() {}
     
     let networkManager = NetworkManager.shared
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let coreDataManager = CoreDataManager.shared
     
     func getWeatherData(for cityName: String, completion: @escaping (WeatherDataModel?) -> Void) {
-        // check in  core data if weather data for the city is present
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "City")
-        fetchRequest.predicate = NSPredicate(format: "name == [c] %@", cityName)
-        
-        
-        do {
-            if let result = try context.fetch(fetchRequest) as? [City], let city = result.first {
+        // Check in Core Data if weather data for the city is present
+        coreDataManager.fetchCity(withName: cityName) { city in
+            if let city = city {
                 if let currentWeather = city.weather {
-                    if isWeatherDataStale(timestamp: currentWeather.timestamp!) {    //  check if cached weather data is less than 4 hours
-                        // get data from api
-                        fetchDataFromApi(for: cityName) { response in
+                    if self.isWeatherDataStale(timestamp: currentWeather.timestamp!) { // data outdated
+                        // Get data from API
+                        self.fetchDataFromApi(for: cityName) { response in
                             if let response = response {
-                                self.saveWeatherDataToCoreData(for:cityName, weatherData: response) // save in core data
+                                self.coreDataManager.saveWeatherData(for: cityName, weatherData: response) // Save in Core Data
                                 completion(response)
                             }
                         }
@@ -47,17 +42,23 @@ class WeatherDataManager {
                         completion(weatherDataModel)
                     }
                 } else {
-                    // get data from api
-                    fetchDataFromApi(for: cityName) { response in
+                    // Get data from API
+                    self.fetchDataFromApi(for: cityName) { response in
                         if let response = response {
-                            self.saveWeatherDataToCoreData(for:cityName, weatherData: response)  // save in core data
+                            self.coreDataManager.saveWeatherData(for: cityName, weatherData: response) // Save in Core Data
                             completion(response)
                         }
                     }
                 }
+            } else {
+                // Handle city not found in Core Data
+                self.fetchDataFromApi(for: cityName) { response in
+                    if let response = response {
+                        self.coreDataManager.saveWeatherData(for: cityName, weatherData: response) // Save in Core Data
+                        completion(response)
+                    }
+                }
             }
-        } catch {
-            print("Failed to fetch weather data: \(error.localizedDescription)")
         }
     }
     
@@ -85,31 +86,6 @@ class WeatherDataManager {
                     }
                 }
             }
-        }
-    }
-      
-    private func saveWeatherDataToCoreData(for cityName: String, weatherData: WeatherDataModel) {
-        let fetchRequest: NSFetchRequest<City> = City.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "name == [c] %@", cityName)
-        
-        do {
-            let cities = try context.fetch(fetchRequest)
-            let city = cities.first ?? City(context: context)
-            city.name = cityName
-            
-            let weather = WeatherData(context: context)
-            weather.temperature = weatherData.temperature
-            weather.humidity = Int32(weatherData.humidity)
-            weather.windspeed = weatherData.windspeed
-            weather.sunset = Int32(weatherData.sunset)
-            weather.sunrise = Int32(weatherData.sunrise)
-            weather.timestamp = Date()
-            
-            city.weather = weather
-            
-            try context.save()
-        } catch {
-            print("Error saving weather data to Core Data: \(error)")
         }
     }
 }

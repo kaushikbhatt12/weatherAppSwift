@@ -16,25 +16,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [self addCities];
+    [[CoreDataManager shared] addCities];
     return YES;
-}
-
-- (void)addCities {
-    NSArray *cityNames = [AppConstants cityNames];
-
-    NSManagedObjectContext *context = self.persistentContainer.viewContext;
-
-    for (NSString *cityName in cityNames) {
-        NSManagedObject *newCity = [NSEntityDescription insertNewObjectForEntityForName:@"City"
-                                                                      inManagedObjectContext:context];
-        NSString *lowercaseCityName = [cityName lowercaseString];
-        [newCity setValue:lowercaseCityName forKey:@"name"];
-    }
-    
-    NSLog(@"Cities added successfully");
-
-    [self saveContext];
 }
 
 
