@@ -19,6 +19,6 @@ class WindCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with wind: String, backgroundImage: UIImage?) {
-        windLabel.text = "Wind Speed \n \(wind)"
+        windLabel.text = "Wind Speed \n \(wind) m/s"
     }
 }
