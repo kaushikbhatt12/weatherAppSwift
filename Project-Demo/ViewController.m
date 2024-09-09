@@ -18,7 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.searchBar.layer.cornerRadius = 10.0;
+    self.searchBar.clipsToBounds = YES;
+    
+    self.weatherButton.layer.cornerRadius = 10.0;
+    self.weatherButton.clipsToBounds = YES;
+
     // Do any additional setup after loading the view.
+    
 }
 
 - (NSManagedObjectContext *)managedObjectContext {
@@ -30,7 +38,6 @@
 - (IBAction)getWeather:(id)sender {
     NSString *cityName = self.searchBar.text;
     if (cityName.length > 0) {
-        [self.spinner startAnimating];
         [self checkCityInCoreData:cityName];
     } else {
         // Handle empty search input if needed
@@ -50,8 +57,7 @@
 
     NSError *error = nil;
     NSArray *results = [context executeFetchRequest:fetchRequest error:&error];
-    
-    [self.spinner stopAnimating];
+
 
     if (error) {
         NSLog(@"Error fetching city: %@, %@", error, error.userInfo);
