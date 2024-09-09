@@ -150,7 +150,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Temperature" translatesAutoresizingMaskIntoConstraints="NO" id="nkZ-dL-LVy">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humidity2" translatesAutoresizingMaskIntoConstraints="NO" id="nkZ-dL-LVy">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzE-Pq-M6O">
@@ -298,8 +298,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Temperature" width="1500" height="1000"/>
         <image name="background" width="385" height="626"/>
+        <image name="humidity2" width="3000" height="2000"/>
         <image name="sunrise" width="299" height="169"/>
         <image name="sunset" width="640" height="454"/>
         <image name="weatherImage" width="1470" height="980"/>
