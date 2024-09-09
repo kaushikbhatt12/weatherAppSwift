@@ -15,12 +15,16 @@ class DetailCollectionViewController: UICollectionViewController {
 
     var weatherCardDataArray: [WeatherCardData] = []
     
-
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        spinner.startAnimating()
+        
         WeatherDataManager.shared.getWeatherData(for: self.cityName!) { weatherDataModel in
             DispatchQueue.main.async {
+                self.spinner.stopAnimating()
                 if let weatherData = weatherDataModel {
                     self.weatherCardDataArray = [
                         WeatherCardData(type: "Temperature", value: "\(weatherData.temperature)", image: nil),
