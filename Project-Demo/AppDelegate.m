@@ -21,60 +21,7 @@
 }
 
 - (void)addCities {
-    NSArray *cityNames = @[
-        @"New York",
-        @"Los Angeles",
-        @"London",
-        @"Paris",
-        @"Tokyo",
-        @"Sydney",
-        @"Berlin",
-        @"Rome",
-        @"Hong Kong",
-        @"Shanghai",
-        @"Dubai",
-        @"Singapore",
-        @"Istanbul",
-        @"Barcelona",
-        @"Moscow",
-        @"Mumbai",
-        @"São Paulo",
-        @"Mexico City",
-        @"Toronto",
-        @"Buenos Aires",
-        @"Seoul",
-        @"Bangkok",
-        @"Dubai",
-        @"Athens",
-        @"Vienna",
-        @"Lisbon",
-        @"Cape Town",
-        @"San Francisco",
-        @"Chicago",
-        @"Melbourne",
-        @"Dubai",
-        @"Jakarta",
-        @"Kuala Lumpur",
-        @"Osaka",
-        @"Dubai",
-        @"Rome",
-        @"Istanbul",
-        @"Dubai",
-        @"Prague",
-        @"Budapest",
-        @"Warsaw",
-        @"Brussels",
-        @"Zurich",
-        @"Dublin",
-        @"Cairo",
-        @"Lima",
-        @"Colombo",
-        @"Santiago",
-        @"Rio de Janeiro",
-        @"Delhi",
-        @"Riyadh"
-    ];
-
+    NSArray *cityNames = [AppConstants cityNames];
 
     NSManagedObjectContext *context = self.persistentContainer.viewContext;
 

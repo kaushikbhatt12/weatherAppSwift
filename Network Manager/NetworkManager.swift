@@ -12,11 +12,9 @@ class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
     
-    let apiKey = ProcessInfo.processInfo.environment["apiKey"]!
-    
     func getCoordinatesForTheCity(for cityName: String, completion: @escaping ((Double, Double)?) -> Void) {
         
-        let apiUrlStr = "http://api.openweathermap.org/geo/1.0/direct?q=\(cityName)&limit=1&appid=\(apiKey)"
+        let apiUrlStr = APIManager.getCitySearchAPIEndpoint(cityName: cityName)
         
         guard let url = URL(string: apiUrlStr) else {
             print("Invalid URL")
@@ -67,9 +65,8 @@ class NetworkManager {
     }
     
     func fetchWeatherData(for latitude: Double, longitude: Double, completion: @escaping (WeatherResponse?) -> Void) {
-        let apiKey = ProcessInfo.processInfo.environment["apiKey"]!
         
-        let apiUrlStr = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)"
+        let apiUrlStr = APIManager.getWeatherAPIEndpoint(latitude: latitude, longitude: longitude)
         
         guard let url = URL(string: apiUrlStr) else {
             print("Invalid URL")
