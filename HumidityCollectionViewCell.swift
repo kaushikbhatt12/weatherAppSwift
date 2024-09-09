@@ -14,12 +14,10 @@ class HumidityCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code, if any
         layer.cornerRadius = 10
     }
     
-    func configure(with humidity: String, backgroundImage: UIImage?) {
+    func configure(with humidity: String ) {
         humidityLabel.text = "Humidity \n \(humidity)%"
-//        backgroundImageView.image = backgroundImage
     }
 }

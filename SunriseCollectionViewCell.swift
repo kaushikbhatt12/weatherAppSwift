@@ -15,11 +15,10 @@ class SunriseCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code, if any
         layer.cornerRadius = 10
     }
     
-    func configure(with sunrise: String, backgroundImage: UIImage?) {
+    func configure(with sunrise: String) {
         if let sunriseTimestamp = TimeInterval(sunrise)
         {
             let sunriseDate = Date(timeIntervalSince1970: sunriseTimestamp)

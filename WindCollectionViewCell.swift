@@ -14,11 +14,10 @@ class WindCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code, if any
         layer.cornerRadius = 10
     }
     
-    func configure(with wind: String, backgroundImage: UIImage?) {
+    func configure(with wind: String) {
         windLabel.text = "Wind Speed \n \(wind) m/s"
     }
 }

@@ -88,21 +88,20 @@ class DetailCollectionViewController: UICollectionViewController {
                 return cell
             case "Humidity":
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Humidity", for: indexPath) as! HumidityCollectionViewCell
-                cell.configure(with: weatherData.value, backgroundImage: UIImage(named: "temperature2")!)
+                cell.configure(with: weatherData.value)
                 return cell
             case "Wind":
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Wind", for: indexPath) as! WindCollectionViewCell
-                cell.configure(with: weatherData.value, backgroundImage: UIImage(named: "temperature2")!)
+                cell.configure(with: weatherData.value)
                 return cell
             case "Sunrise":
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Sunrise", for: indexPath) as! SunriseCollectionViewCell
-                cell.configure(with: weatherData.value, backgroundImage: UIImage(named: "temperature2")!)
+                cell.configure(with: weatherData.value)
                 return cell
             case "Sunset":
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Sunset", for: indexPath) as! SunsetCollectionViewCell
-                cell.configure(with: weatherData.value, backgroundImage: UIImage(named: "temperature2")!)
+                cell.configure(with: weatherData.value)
                 return cell
-            // Handle other cases similarly
             default:
                 return UICollectionViewCell()
             }
