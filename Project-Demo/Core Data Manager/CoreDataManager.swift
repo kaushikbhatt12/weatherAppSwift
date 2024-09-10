@@ -29,16 +29,15 @@ import CoreData
     
     @objc func addCities() {
         
-        if let cityNames = AppConstants.cityNames() as? [String] {
-            for cityName in cityNames {
-                let newCity = NSEntityDescription.insertNewObject(forEntityName: "City", into: context)
-                let lowercaseCityName = cityName.lowercased()
-                newCity.setValue(lowercaseCityName, forKey: "name")
-            }
-            
-            saveContext()
-            print("Cities added successfully")
+        let cityNames = AppConstants.cityNames
+        for cityName in cityNames {
+            let newCity = NSEntityDescription.insertNewObject(forEntityName: "City", into: context)
+            let lowercaseCityName = cityName.lowercased()
+            newCity.setValue(lowercaseCityName, forKey: "name")
         }
+        
+        saveContext()
+        print("Cities added successfully")
     }
     
     func saveContext() {

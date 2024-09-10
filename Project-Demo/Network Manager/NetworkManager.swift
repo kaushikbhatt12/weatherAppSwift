@@ -64,7 +64,7 @@ class NetworkManager {
         task.resume()
     }
     
-    func fetchWeatherData(for latitude: Double, longitude: Double, completion: @escaping (WeatherResponse?) -> Void) {
+    func fetchWeatherData(for latitude:Double, longitude: Double, completion: @escaping (WeatherResponse?) -> Void) {
         
         let apiUrlStr = APIManager.getWeatherAPIEndpoint(latitude: latitude, longitude: longitude)
         

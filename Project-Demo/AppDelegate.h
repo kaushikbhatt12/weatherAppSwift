@@ -7,7 +7,6 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "AppConstants.h"
 #import "Project_Demo-Swift.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
