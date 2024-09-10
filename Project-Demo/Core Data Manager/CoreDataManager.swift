@@ -40,7 +40,7 @@ import CoreData
         print("Cities added successfully")
     }
     
-    func saveContext() {
+    private func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
@@ -56,12 +56,29 @@ import CoreData
     @objc func fetchCity(withName cityName: String, completion: @escaping (City?) -> Void) {
         let fetchRequest: NSFetchRequest<City> = City.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: AppConstants.CITY_SEARCH_PREDICATE, cityName)
-        
         do {
             let cities = try context.fetch(fetchRequest)
             completion(cities.first)
         } catch {
             print("Failed to fetch city: \(error.localizedDescription)")
+            completion(nil)
+        }
+    }
+    
+    func saveCityData(for cityName: String, cityData: CityModel, completion: @escaping (City?)->Void) {
+        let fetchRequest: NSFetchRequest<City> = City.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: AppConstants.CITY_SEARCH_PREDICATE, cityName)
+        do {
+            let cities = try context.fetch(fetchRequest)
+            let city = cities.first ?? City(context: context)
+            city.name = cityName
+            city.latitude = cityData.lat
+            city.longitude = cityData.lon
+            
+            try context.save()
+            completion(city)
+        } catch {
+            print("Error saving city data to Core Data: \(error)")
             completion(nil)
         }
     }

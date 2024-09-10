@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) NSString *selectedCityName;
+@property (strong, nonatomic) NSNumber *longitude;
+@property (strong, nonatomic) NSNumber *latitude;
 
 @end
 
@@ -36,16 +38,24 @@
 - (IBAction)getWeather:(id)sender {
     NSString *cityName = self.searchBar.text;
     if (cityName.length > 0) {
-        [[CoreDataManager shared] fetchCityWithName:cityName completion:^(City * _Nullable city) {
-            if (city) {
-                NSLog(@"City found: %@", city.name);
-                self.selectedCityName = cityName;
-                [self performSegueWithIdentifier:Messages.SHOW_WEATHER sender:self];
-            } else {
-                NSLog(@"City not found.");
-                [self showAlertWithTitle:Messages.CITY_NOT_FOUND message:Messages.CITY_NOT_FOUND_MESSAGE];
-            }
-        }];
+        // Perform the network or Core Data fetch in a background queue
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            [[WeatherDataManager shared] getCityDataWithName:cityName completion:^(City * _Nullable city) {
+                // Switch back to the main thread for UI updates
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (city) {
+                        NSLog(@"City found: %@", city.name);
+                        self.selectedCityName = city.name;
+                        self.longitude = @(city.longitude);
+                        self.latitude = @(city.latitude);
+                        [self performSegueWithIdentifier:Messages.SHOW_WEATHER sender:self];
+                    } else {
+                        NSLog(@"City not found.");
+                        [self showAlertWithTitle:Messages.CITY_NOT_FOUND message:Messages.CITY_NOT_FOUND_MESSAGE];
+                    }
+                });
+            }];
+        });
     } else {
         NSLog(@"Please enter a city name.");
     }
@@ -54,7 +64,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:Messages.SHOW_WEATHER]) {
         DetailCollectionViewController *destinationVC = segue.destinationViewController;
-        destinationVC.cityName = self.selectedCityName; // Pass the city name
+        destinationVC.cityName = self.selectedCityName; 
+        // Pass the city name latitude and longitude
+        destinationVC.lon = self.longitude;
+        destinationVC.lat = self.latitude;
     }
 }
 

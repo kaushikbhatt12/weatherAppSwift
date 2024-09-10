@@ -12,7 +12,7 @@ class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
     
-    func getCoordinatesForTheCity(for cityName: String, completion: @escaping ((Double, Double)?) -> Void) {
+    func fetchCityData(for cityName: String, completion: @escaping ((String, Double, Double)?) -> Void) {
         
         let apiUrlStr = APIManager.getCitySearchAPIEndpoint(cityName: cityName)
         
@@ -51,7 +51,7 @@ class NetworkManager {
                 let cities = try decoder.decode([CityResponse].self, from: data)
                 
                 if let firstCity = cities.first {
-                    completion((firstCity.lat, firstCity.lon))
+                    completion((firstCity.name, firstCity.lat, firstCity.lon))
                 } else {
                     completion(nil)
                 }

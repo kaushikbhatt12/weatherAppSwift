@@ -2,7 +2,7 @@
 //  WeatherData+CoreDataProperties.swift
 //  Project-Demo
 //
-//  Created by kaushik.bha on 09/09/24.
+//  Created by kaushik.bha on 10/09/24.
 //
 //
 
@@ -21,9 +21,9 @@ extension WeatherData {
     @NSManaged public var sunset: Int32
     @NSManaged public var temperature: Double
     @NSManaged public var timestamp: Date?
-    @NSManaged public var windspeed: Double
-    @NSManaged public var weatherIcon: String?
     @NSManaged public var weatherDescription: String?
+    @NSManaged public var weatherIcon: String?
+    @NSManaged public var windspeed: Double
     @NSManaged public var weather: City?
 
 }

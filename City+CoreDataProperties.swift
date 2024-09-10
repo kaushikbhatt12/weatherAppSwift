@@ -2,7 +2,7 @@
 //  City+CoreDataProperties.swift
 //  Project-Demo
 //
-//  Created by kaushik.bha on 09/09/24.
+//  Created by kaushik.bha on 10/09/24.
 //
 //
 
@@ -17,6 +17,8 @@ extension City {
     }
 
     @NSManaged public var name: String?
+    @NSManaged public var longitude: Double
+    @NSManaged public var latitude: Double
     @NSManaged public var weather: WeatherData?
 
 }

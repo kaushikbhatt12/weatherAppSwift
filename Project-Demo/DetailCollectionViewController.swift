@@ -12,13 +12,13 @@ private let reuseIdentifier = "Cell"
 class DetailCollectionViewController: UICollectionViewController {
     
     @objc var cityName : String?
-    @objc var long: String?
-    @objc var lat: String?
+    @objc var lon: NSNumber?
+    @objc var lat: NSNumber?
 
     var weatherCardDataArray: [WeatherCardData] = []
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    
+   
     private let viewModel = DetailCollectionViewModel()
     
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class DetailCollectionViewController: UICollectionViewController {
         spinner.startAnimating()
         
         if let cityName = cityName {
-            viewModel.fetchWeatherData(for: cityName)
+            viewModel.fetchWeatherData(cityName: cityName, latitude: lat as! Double, longitude: lon as! Double)
         }
     
         // Uncomment the following line to preserve selection between presentations
