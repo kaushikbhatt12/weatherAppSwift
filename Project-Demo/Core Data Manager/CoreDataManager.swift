@@ -53,7 +53,7 @@ import CoreData
         }
     }
     
-    func fetchCity(withName cityName: String, completion: @escaping (City?) -> Void) {
+    @objc func fetchCity(withName cityName: String, completion: @escaping (City?) -> Void) {
         let fetchRequest: NSFetchRequest<City> = City.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: AppConstants.CITY_SEARCH_PREDICATE, cityName)
         

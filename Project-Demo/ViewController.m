@@ -24,8 +24,6 @@
     
     self.weatherButton.layer.cornerRadius = 10.0;
     self.weatherButton.clipsToBounds = YES;
-
-    // Do any additional setup after loading the view.
     
 }
 
@@ -38,40 +36,18 @@
 - (IBAction)getWeather:(id)sender {
     NSString *cityName = self.searchBar.text;
     if (cityName.length > 0) {
-        [self checkCityInCoreData:cityName];
+        [[CoreDataManager shared] fetchCityWithName:cityName completion:^(City * _Nullable city) {
+            if (city) {
+                NSLog(@"City found: %@", city.name);
+                self.selectedCityName = cityName;
+                [self performSegueWithIdentifier:@"showWeather" sender:self];
+            } else {
+                NSLog(@"City not found.");
+                [self showAlertWithTitle:Messages.CITY_NOT_FOUND message:Messages.CITY_NOT_FOUND_MESSAGE];
+            }
+        }];
     } else {
-        // Handle empty search input if needed
         NSLog(@"Please enter a city name.");
-    }
-}
-
-- (void)checkCityInCoreData:(NSString *)cityName {
-    NSManagedObjectContext *context = [self managedObjectContext];
-
-    // Convert both cityName and stored names to lowercase for case-insensitive comparison
-    NSString *lowercaseCityName = [cityName lowercaseString];
-
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"City"];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", lowercaseCityName];
-    fetchRequest.predicate = predicate;
-
-    NSError *error = nil;
-    NSArray *results = [context executeFetchRequest:fetchRequest error:&error];
-
-
-    if (error) {
-        NSLog(@"Error fetching city: %@, %@", error, error.userInfo);
-        return;
-    }
-
-    if (results.count > 0) {
-        NSLog(@"City %@ found in Core Data.", cityName);
-        self.selectedCityName = cityName;
-        [self performSegueWithIdentifier:@"showWeather" sender:self];
-//        [self fetchWeatherForCity:cityName];  // Fetch weather data for the city
-    } else {
-        NSLog(@"City %@ not found in Core Data.", cityName);
-        // Handle city not found, e.g., show an alert or make an API call
     }
 }
 
@@ -82,7 +58,15 @@
     }
 }
 
-
-
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                         style:UIAlertActionStyleDefault
+                                                       handler:nil];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 
 @end

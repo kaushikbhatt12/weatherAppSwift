@@ -43,3 +43,7 @@ struct ApiConstants {
     static let getWeatherForCoordinatesApiEndPoint = "https://api.openweathermap.org/data/2.5/weather?lat=%@&lon=%@&appid=%@"
 }
 
+@objc class Messages : NSObject {
+    @objc static let CITY_NOT_FOUND = "City Not Found"
+    @objc static let CITY_NOT_FOUND_MESSAGE = "The city you searched for was not found."
+}
