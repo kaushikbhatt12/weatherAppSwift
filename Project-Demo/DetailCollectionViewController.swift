@@ -146,8 +146,8 @@ extension DetailCollectionViewController: DetailCollectionViewModelDelegate {
     func didFailWithError(_ error: Error) {
         self.spinner.stopAnimating()
         // Show error alert to user
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let alert = UIAlertController(title: Messages.ERROR, message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Messages.OK, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 }

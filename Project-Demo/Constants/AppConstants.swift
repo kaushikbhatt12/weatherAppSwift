@@ -47,4 +47,6 @@ struct ApiConstants {
     @objc static let CITY_NOT_FOUND = "City Not Found"
     @objc static let CITY_NOT_FOUND_MESSAGE = "The city you searched for was not found."
     @objc static let WEATHER_FETCH_FAILED = "Failed to fetch weather data."
+    @objc static let ERROR = "Error"
+    @objc static let OK = "OK"
 }
