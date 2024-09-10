@@ -124,7 +124,6 @@
 		A803AC292C8EED92009D61F9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				A803AC2C2C8EF3CD009D61F9 /* WeatherAPIManager.swift */,
 				A803AC2E2C8EF7FD009D61F9 /* AppConstants.m */,
 				A803AC302C8EF819009D61F9 /* AppConstants.h */,
 			);
@@ -142,12 +141,6 @@
 		A8083CA32C8844C8002E02E3 = {
 			isa = PBXGroup;
 			children = (
-				A803AC312C8F0135009D61F9 /* Core Data Manager */,
-				A803AC292C8EED92009D61F9 /* Constants */,
-				A8243BD72C8DD90B00842CE7 /* Weather Data Manager */,
-				A8083CFB2C89B0C8002E02E3 /* Network Manager */,
-				A8083CF82C89A709002E02E3 /* Types */,
-				A8083CF72C89A65F002E02E3 /* CoreDataModels */,
 				A8083CAE2C8844C8002E02E3 /* Project-Demo */,
 				A8083CCD2C8844CF002E02E3 /* Project-DemoTests */,
 				A8083CD72C8844CF002E02E3 /* Project-DemoUITests */,
@@ -169,6 +162,12 @@
 		A8083CAE2C8844C8002E02E3 /* Project-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				A8083CF82C89A709002E02E3 /* Types */,
+				A8083CF72C89A65F002E02E3 /* CoreDataModels */,
+				A8083CFB2C89B0C8002E02E3 /* Network Manager */,
+				A8243BD72C8DD90B00842CE7 /* Weather Data Manager */,
+				A803AC292C8EED92009D61F9 /* Constants */,
+				A803AC312C8F0135009D61F9 /* Core Data Manager */,
 				A83C0F622C8CF1280046D1D6 /* SunriseCollectionViewCell.swift */,
 				A8243BD52C8DC99200842CE7 /* SunsetCollectionViewCell.swift */,
 				A83C0F5C2C8B338A0046D1D6 /* WindCollectionViewCell.swift */,
@@ -233,6 +232,7 @@
 		A8083CFB2C89B0C8002E02E3 /* Network Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A803AC2C2C8EF3CD009D61F9 /* WeatherAPIManager.swift */,
 				A8083CF52C899925002E02E3 /* NetworkManager.swift */,
 			);
 			path = "Network Manager";
