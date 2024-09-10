@@ -162,6 +162,7 @@
 		A8083CAE2C8844C8002E02E3 /* Project-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				A8E5D1B22C906E600084DECF /* APILayer */,
 				A8083CF82C89A709002E02E3 /* Types */,
 				A8083CF72C89A65F002E02E3 /* CoreDataModels */,
 				A8083CFB2C89B0C8002E02E3 /* Network Manager */,
@@ -172,16 +173,16 @@
 				A8243BD52C8DC99200842CE7 /* SunsetCollectionViewCell.swift */,
 				A83C0F5C2C8B338A0046D1D6 /* WindCollectionViewCell.swift */,
 				A8E4D8F02C8AE2A40053AAF8 /* HumidityCollectionViewCell.swift */,
+				A8E4D8EE2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift */,
+				A8E5D1B02C905B8B0084DECF /* DetailCollectionViewModel.swift */,
+				A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */,
 				A8083CAF2C8844C8002E02E3 /* AppDelegate.h */,
 				A8083CB02C8844C8002E02E3 /* AppDelegate.m */,
 				A8083CB22C8844C8002E02E3 /* SceneDelegate.h */,
 				A8083CB32C8844C8002E02E3 /* SceneDelegate.m */,
 				A8083CB52C8844C8002E02E3 /* ViewController.h */,
 				A8083CB62C8844C8002E02E3 /* ViewController.m */,
-				A8E5D1B02C905B8B0084DECF /* DetailCollectionViewModel.swift */,
-				A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */,
 				A8083CB82C8844C8002E02E3 /* Main.storyboard */,
-				A8E4D8EE2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift */,
 				A8083CBE2C8844CB002E02E3 /* Assets.xcassets */,
 				A8083CC02C8844CB002E02E3 /* LaunchScreen.storyboard */,
 				A8083CC32C8844CB002E02E3 /* Info.plist */,
@@ -233,7 +234,6 @@
 		A8083CFB2C89B0C8002E02E3 /* Network Manager */ = {
 			isa = PBXGroup;
 			children = (
-				A803AC2C2C8EF3CD009D61F9 /* WeatherAPIManager.swift */,
 				A8083CF52C899925002E02E3 /* NetworkManager.swift */,
 			);
 			path = "Network Manager";
@@ -245,6 +245,14 @@
 				A8243BD82C8DD95900842CE7 /* WeatherDataManager.swift */,
 			);
 			path = "Weather Data Manager";
+			sourceTree = "<group>";
+		};
+		A8E5D1B22C906E600084DECF /* APILayer */ = {
+			isa = PBXGroup;
+			children = (
+				A803AC2C2C8EF3CD009D61F9 /* WeatherAPIManager.swift */,
+			);
+			path = APILayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

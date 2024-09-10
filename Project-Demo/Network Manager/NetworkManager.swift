@@ -99,4 +99,23 @@ class NetworkManager {
         }
         task.resume()
     }
+    
+    func fetchImageIcon(for imageParameter : String, completion: @escaping (Data?) -> Void) {
+        let urlString = "http://openweathermap.org/img/w/\(imageParameter).png"
+        
+        guard let url = URL(string: urlString) else { return }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data, error == nil {
+                DispatchQueue.main.async {
+                    completion(data)
+                }
+            } else {
+                completion(nil)
+            }
+        }
+        
+        task.resume()
+    }
+        
 }

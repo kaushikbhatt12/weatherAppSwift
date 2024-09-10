@@ -17,7 +17,7 @@ import CoreData
         container.loadPersistentStores { storeDescription, error in
             if let error = error as NSError? {
                 // handle error
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                print("Unresolved error \(error), \(error.userInfo)")
             }
         }
         return container
@@ -48,7 +48,7 @@ import CoreData
             } catch {
                 let nserror = error as NSError
                 // handle error
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                print("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }
