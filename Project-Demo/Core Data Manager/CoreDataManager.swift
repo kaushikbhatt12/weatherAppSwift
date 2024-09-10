@@ -13,7 +13,7 @@ import CoreData
     private override init() {}
     
     private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "CityModel")
+        let container = NSPersistentContainer(name: AppConstants.CITY_MODEL)
         container.loadPersistentStores { storeDescription, error in
             if let error = error as NSError? {
                 // handle error
@@ -31,9 +31,9 @@ import CoreData
         
         let cityNames = AppConstants.cityNames
         for cityName in cityNames {
-            let newCity = NSEntityDescription.insertNewObject(forEntityName: "City", into: context)
+            let newCity = NSEntityDescription.insertNewObject(forEntityName: AppConstants.CITY_ENTITY, into: context)
             let lowercaseCityName = cityName.lowercased()
-            newCity.setValue(lowercaseCityName, forKey: "name")
+            newCity.setValue(lowercaseCityName, forKey: AppConstants.CITY_ENTITY_NAME_ATTRIBUTE)
         }
         
         saveContext()
@@ -55,7 +55,7 @@ import CoreData
     
     func fetchCity(withName cityName: String, completion: @escaping (City?) -> Void) {
         let fetchRequest: NSFetchRequest<City> = City.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "name == [c] %@", cityName)
+        fetchRequest.predicate = NSPredicate(format: AppConstants.CITY_SEARCH_PREDICATE, cityName)
         
         do {
             let cities = try context.fetch(fetchRequest)
@@ -68,7 +68,7 @@ import CoreData
     
     func saveWeatherData(for cityName: String, weatherData: WeatherDataModel) {
         let fetchRequest: NSFetchRequest<City> = City.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "name == [c] %@", cityName)
+        fetchRequest.predicate = NSPredicate(format: AppConstants.CITY_SEARCH_PREDICATE, cityName)
         
         do {
             let cities = try context.fetch(fetchRequest)

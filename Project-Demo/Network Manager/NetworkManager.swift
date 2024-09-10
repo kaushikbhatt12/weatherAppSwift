@@ -23,7 +23,7 @@ class NetworkManager {
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "GET"
+        request.httpMethod = ApiConstants.GET
         
         let session = URLSession.shared
         
