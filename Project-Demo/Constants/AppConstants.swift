@@ -26,6 +26,7 @@ struct ApiConstants {
     static let BASE_URL = "https://api.openweathermap.org"
     static let getCoordinatesApiEndPoint = "\(BASE_URL)/geo/1.0/direct?q=%@&limit=1&appid=%@"
     static let getWeatherForCoordinatesApiEndPoint = "\(BASE_URL)/data/2.5/weather?lat=%@&lon=%@&appid=%@"
+    static let fetchImageEndPoint = "\(BASE_URL)/img/w/%@.png"
 }
 
 @objc class Messages : NSObject {

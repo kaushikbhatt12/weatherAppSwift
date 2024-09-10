@@ -20,4 +20,9 @@ class APIManager {
         let apiUrlStr = String(format: ApiConstants.getWeatherForCoordinatesApiEndPoint, String(latitude), String(longitude), API_KEY )
         return apiUrlStr
     }
+    
+    static func getIconEndPoint(imageParameter : String) -> String {
+        let apiUrlStr  = String(format: ApiConstants.fetchImageEndPoint, imageParameter)
+        return apiUrlStr
+    }
 }

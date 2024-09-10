@@ -101,15 +101,17 @@ class NetworkManager {
     }
     
     func fetchImageIcon(for imageParameter : String, completion: @escaping (Data?) -> Void) {
-        let urlString = "http://openweathermap.org/img/w/\(imageParameter).png"
+        let apiUrlStr = APIManager.getIconEndPoint(imageParameter: imageParameter)
         
-        guard let url = URL(string: urlString) else { return }
+        guard let url = URL(string: apiUrlStr) else {
+            print("Invalid URL")
+            completion(nil)
+            return
+        }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data, error == nil {
-                DispatchQueue.main.async {
-                    completion(data)
-                }
+                completion(data)
             } else {
                 completion(nil)
             }
@@ -117,5 +119,5 @@ class NetworkManager {
         
         task.resume()
     }
-        
+    
 }

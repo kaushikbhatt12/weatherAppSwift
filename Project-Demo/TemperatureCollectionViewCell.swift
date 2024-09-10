@@ -38,19 +38,13 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
         }
         if let imageParameter = imageParameter {
             DispatchQueue.global(qos: .background).async {
-                let urlString = "http://openweathermap.org/img/w/\(imageParameter).png"
-                
-                guard let url = URL(string: urlString) else { return }
-                
-                let task = URLSession.shared.dataTask(with: url) { data, response, error in
-                    if let data = data, error == nil {
+                NetworkManager.shared.fetchImageIcon(for: imageParameter) { data in
+                    if let data = data {
                         DispatchQueue.main.async {
                             self.weatherIcon.image = UIImage(data: data)
                         }
                     }
                 }
-                
-                task.resume()
             }
         }
     }
