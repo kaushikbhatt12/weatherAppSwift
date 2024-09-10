@@ -12,6 +12,8 @@ private let reuseIdentifier = "Cell"
 class DetailCollectionViewController: UICollectionViewController {
     
     @objc var cityName : String?
+    @objc var long: String?
+    @objc var lat: String?
 
     var weatherCardDataArray: [WeatherCardData] = []
     
@@ -66,24 +68,24 @@ class DetailCollectionViewController: UICollectionViewController {
         let weatherData = weatherCardDataArray[indexPath.row]
             
             switch weatherData.type {
-            case "Temperature":
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Temperature", for: indexPath) as! TemperatureCollectionViewCell
+            case AppConstants.TEMPERATURE:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.TEMPERATURE, for: indexPath) as! TemperatureCollectionViewCell
                 cell.configure(with: weatherData.value, imageParameter: weatherData.image, description: weatherData.description)
                 return cell
-            case "Humidity":
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Humidity", for: indexPath) as! HumidityCollectionViewCell
+            case AppConstants.HUMIDITY:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.HUMIDITY, for: indexPath) as! HumidityCollectionViewCell
                 cell.configure(with: weatherData.value)
                 return cell
-            case "Wind":
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Wind", for: indexPath) as! WindCollectionViewCell
+            case AppConstants.WIND:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.WIND, for: indexPath) as! WindCollectionViewCell
                 cell.configure(with: weatherData.value)
                 return cell
-            case "Sunrise":
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Sunrise", for: indexPath) as! SunriseCollectionViewCell
+            case AppConstants.SUNRISE:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.SUNRISE, for: indexPath) as! SunriseCollectionViewCell
                 cell.configure(with: weatherData.value)
                 return cell
-            case "Sunset":
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Sunset", for: indexPath) as! SunsetCollectionViewCell
+            case AppConstants.SUNSET:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.SUNSET, for: indexPath) as! SunsetCollectionViewCell
                 cell.configure(with: weatherData.value)
                 return cell
             default:

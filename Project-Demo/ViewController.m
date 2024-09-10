@@ -40,7 +40,7 @@
             if (city) {
                 NSLog(@"City found: %@", city.name);
                 self.selectedCityName = cityName;
-                [self performSegueWithIdentifier:@"showWeather" sender:self];
+                [self performSegueWithIdentifier:Messages.SHOW_WEATHER sender:self];
             } else {
                 NSLog(@"City not found.");
                 [self showAlertWithTitle:Messages.CITY_NOT_FOUND message:Messages.CITY_NOT_FOUND_MESSAGE];
@@ -52,7 +52,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showWeather"]) {
+    if ([segue.identifier isEqualToString:Messages.SHOW_WEATHER]) {
         DetailCollectionViewController *destinationVC = segue.destinationViewController;
         destinationVC.cityName = self.selectedCityName; // Pass the city name
     }
@@ -62,7 +62,7 @@
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:Messages.OK
                                                          style:UIAlertActionStyleDefault
                                                        handler:nil];
     [alertController addAction:okAction];

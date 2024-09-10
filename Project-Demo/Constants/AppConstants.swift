@@ -17,6 +17,11 @@ struct AppConstants {
     static let CITY_ENTITY = "City"
     static let CITY_ENTITY_NAME_ATTRIBUTE = "name"
     static let CITY_SEARCH_PREDICATE = "name == [c] %@"
+    static let TEMPERATURE = "Temperature"
+    static let HUMIDITY = "Humidity"
+    static let WIND = "Wind"
+    static let SUNSET  = "Sunset"
+    static let SUNRISE = "Sunrise"
 }
 
 
@@ -35,4 +40,5 @@ struct ApiConstants {
     @objc static let WEATHER_FETCH_FAILED = "Failed to fetch weather data."
     @objc static let ERROR = "Error"
     @objc static let OK = "OK"
+    @objc static let SHOW_WEATHER = "showWeather"
 }
