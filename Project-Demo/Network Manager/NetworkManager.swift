@@ -13,7 +13,6 @@ class NetworkManager {
     private init() {}
     
     func fetchCityData(for cityName: String, completion: @escaping ((String, Double, Double)?) -> Void) {
-        
         let apiUrlStr = APIManager.getCitySearchAPIEndpoint(cityName: cityName)
         
         guard let url = URL(string: apiUrlStr) else {
@@ -48,10 +47,10 @@ class NetworkManager {
             
             do {
                 let decoder = JSONDecoder()
-                let cities = try decoder.decode([CityModel].self, from: data)
+                let cities = try decoder.decode([CityResponse].self, from: data)
                 
                 if let firstCity = cities.first {
-                    completion((firstCity.cityName, firstCity.lat, firstCity.lon))
+                    completion((firstCity.name, firstCity.lat, firstCity.lon))
                 } else {
                     completion(nil)
                 }
