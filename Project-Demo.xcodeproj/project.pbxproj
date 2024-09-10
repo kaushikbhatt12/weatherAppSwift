@@ -35,6 +35,7 @@
 		A8E4D8EF2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E4D8EE2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift */; };
 		A8E4D8F12C8AE2A40053AAF8 /* HumidityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E4D8F02C8AE2A40053AAF8 /* HumidityCollectionViewCell.swift */; };
 		A8E5D1AF2C903D200084DECF /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E5D1AE2C903D200084DECF /* AppConstants.swift */; };
+		A8E5D1B12C905B8B0084DECF /* DetailCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E5D1B02C905B8B0084DECF /* DetailCollectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		A8E4D8EE2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureCollectionViewCell.swift; sourceTree = "<group>"; };
 		A8E4D8F02C8AE2A40053AAF8 /* HumidityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		A8E5D1AE2C903D200084DECF /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		A8E5D1B02C905B8B0084DECF /* DetailCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				A8083CB32C8844C8002E02E3 /* SceneDelegate.m */,
 				A8083CB52C8844C8002E02E3 /* ViewController.h */,
 				A8083CB62C8844C8002E02E3 /* ViewController.m */,
+				A8E5D1B02C905B8B0084DECF /* DetailCollectionViewModel.swift */,
 				A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */,
 				A8083CB82C8844C8002E02E3 /* Main.storyboard */,
 				A8E4D8EE2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift */,
@@ -391,6 +394,7 @@
 				A8083CB72C8844C8002E02E3 /* ViewController.m in Sources */,
 				A8083CF62C899925002E02E3 /* NetworkManager.swift in Sources */,
 				A8243BD62C8DC99200842CE7 /* SunsetCollectionViewCell.swift in Sources */,
+				A8E5D1B12C905B8B0084DECF /* DetailCollectionViewModel.swift in Sources */,
 				A8243BD92C8DD95900842CE7 /* WeatherDataManager.swift in Sources */,
 				A8083CF02C885F57002E02E3 /* DetailCollectionViewController.swift in Sources */,
 				A8083CB12C8844C8002E02E3 /* AppDelegate.m in Sources */,

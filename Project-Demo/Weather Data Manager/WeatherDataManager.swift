@@ -27,6 +27,8 @@ class WeatherDataManager {
                             if let response = response {
                                 self.coreDataManager.saveWeatherData(for: cityName, weatherData: response) // Save in Core Data
                                 completion(response)
+                            } else {
+                                completion(nil)
                             }
                         }
                     } else {
@@ -49,6 +51,8 @@ class WeatherDataManager {
                         if let response = response {
                             self.coreDataManager.saveWeatherData(for: cityName, weatherData: response) // Save in Core Data
                             completion(response)
+                        } else {
+                            completion(nil)
                         }
                     }
                 }
@@ -58,6 +62,9 @@ class WeatherDataManager {
                     if let response = response {
                         self.coreDataManager.saveWeatherData(for: cityName, weatherData: response) // Save in Core Data
                         completion(response)
+                    }
+                    else {
+                        completion(nil)
                     }
                 }
             }
@@ -87,6 +94,8 @@ class WeatherDataManager {
                             weatherDescription: weatherResponse.weather[0].main + " - " + weatherResponse.weather[0].description
                         )
                         completion(weatherDataModel)
+                    } else {
+                        completion(nil)
                     }
                 }
             }

@@ -17,35 +17,19 @@ class DetailCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    private let viewModel = DetailCollectionViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.delegate = self
+        
         spinner.startAnimating()
         
-        WeatherDataManager.shared.getWeatherData(for: self.cityName!) { weatherDataModel in
-            DispatchQueue.main.async {
-                self.spinner.stopAnimating()
-                if let weatherData = weatherDataModel {
-                    self.weatherCardDataArray = [
-                        WeatherCardData(type: "Temperature", value: "\(weatherData.temperature)", image: weatherData.weatherIcon, description: weatherData.weatherDescription),
-                        WeatherCardData(type: "Humidity", value: "\(weatherData.humidity)", image: nil, description: nil),
-                        WeatherCardData(type: "Wind", value: "\(weatherData.windspeed)",image: nil, description: nil),
-                        WeatherCardData(type: "Sunrise", value: "\(weatherData.sunrise)",image: nil, description: nil),
-                        WeatherCardData(type: "Sunset", value: "\(weatherData.sunset)",image: nil, description: nil)
-                    ]
-                    self.collectionView.reloadData()
-                }
-            }
+        if let cityName = cityName {
+            viewModel.fetchWeatherData(for: cityName)
         }
-        
-        
-        
-        
-        
-
-
     
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -149,5 +133,21 @@ class DetailCollectionViewController: UICollectionViewController {
 extension DetailCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width-10, height: 200)
+    }
+}
+
+extension DetailCollectionViewController: DetailCollectionViewModelDelegate {
+    func didUpdateWeatherData(_ weatherData: [WeatherCardData]) {
+        self.weatherCardDataArray = weatherData
+        self.collectionView.reloadData()
+        self.spinner.stopAnimating()
+    }
+    
+    func didFailWithError(_ error: Error) {
+        self.spinner.stopAnimating()
+        // Show error alert to user
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
