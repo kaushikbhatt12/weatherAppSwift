@@ -48,10 +48,10 @@ class NetworkManager {
             
             do {
                 let decoder = JSONDecoder()
-                let cities = try decoder.decode([CityResponse].self, from: data)
+                let cities = try decoder.decode([CityModel].self, from: data)
                 
                 if let firstCity = cities.first {
-                    completion((firstCity.name, firstCity.lat, firstCity.lon))
+                    completion((firstCity.cityName, firstCity.lat, firstCity.lon))
                 } else {
                     completion(nil)
                 }

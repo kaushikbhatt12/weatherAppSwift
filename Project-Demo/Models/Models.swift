@@ -7,12 +7,6 @@
 
 import Foundation
 
-struct CityResponse: Codable {
-    let name: String
-    let lat: Double
-    let lon: Double
-}
-
 struct CityModel: Codable {
     let cityName: String
     let lat: Double
