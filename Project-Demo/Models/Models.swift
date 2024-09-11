@@ -33,7 +33,7 @@ struct WeatherDataModel: Codable {
 struct WeatherCardData {
     let type: String
     let value: String
-    let image: String?
+    let image: URL?
     let description: String?
 }
 

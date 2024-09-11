@@ -33,8 +33,7 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
         temperatureLabel.text = weatherData.value
         weatherDescriptionLabel.text = weatherData.description
         
-        if let imageParameter = weatherData.image {
-            let imageUrl = URL(string : APIManager.getIconEndPoint(imageParameter: imageParameter))
+        if let imageUrl = weatherData.image {
             weatherIcon.sd_setImage(with: imageUrl)
         }
     }
