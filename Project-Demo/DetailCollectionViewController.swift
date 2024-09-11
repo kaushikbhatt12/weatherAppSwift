@@ -77,7 +77,7 @@ class DetailCollectionViewController: UICollectionViewController {
             switch weatherData.type {
             case AppConstants.TEMPERATURE:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.TEMPERATURE, for: indexPath) as! TemperatureCollectionViewCell
-                cell.configure(with: weatherData.value, imageParameter: weatherData.image, description: weatherData.description)
+                cell.configure(weatherData)
                 return cell
             case AppConstants.HUMIDITY:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.HUMIDITY, for: indexPath) as! HumidityCollectionViewCell
