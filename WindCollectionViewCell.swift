@@ -17,7 +17,7 @@ class WindCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 10
     }
     
-    func configure(with wind: String) {
-        windLabel.text = "Wind Speed \n \(wind) m/s"
+    func configure(_ weatherData: WeatherCardData) {
+        windLabel.text = weatherData.value
     }
 }

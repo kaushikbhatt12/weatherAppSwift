@@ -24,10 +24,10 @@ class DetailCollectionViewModel {
                     if let weatherData = weatherDataModel {
                         let weatherCardDataArray = [
                             WeatherCardData(type: AppConstants.TEMPERATURE, value: "\(weatherData.temperature)", image: weatherData.weatherIcon, description: weatherData.weatherDescription),
-                            WeatherCardData(type: AppConstants.HUMIDITY, value: "\(weatherData.humidity)", image: nil, description: nil),
-                            WeatherCardData(type: AppConstants.WIND, value: "\(weatherData.windspeed)", image: nil, description: nil),
-                            WeatherCardData(type: AppConstants.SUNRISE, value: "\(weatherData.sunrise)", image: nil, description: nil),
-                            WeatherCardData(type: AppConstants.SUNSET, value: "\(weatherData.sunset)", image: nil, description: nil)
+                            WeatherCardData(type: AppConstants.HUMIDITY, value: "Humidity \n \(weatherData.humidity)%", image: nil, description: nil),
+                            WeatherCardData(type: AppConstants.WIND, value: "Wind Speed \n \(weatherData.windspeed) m/s", image: nil, description: nil),
+                            WeatherCardData(type: AppConstants.SUNRISE, value: "Sunrise \n \(formatTime(from: weatherData.sunrise))", image: nil, description: nil),
+                            WeatherCardData(type: AppConstants.SUNSET, value: "Sunset \n \(formatTime(from: weatherData.sunset))", image: nil, description: nil)
                         ]
                         self.delegate?.didUpdateWeatherData(weatherCardDataArray)
                     } else {

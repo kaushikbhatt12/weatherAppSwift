@@ -21,7 +21,6 @@ struct CityModel: Codable {
 
 struct WeatherDataModel: Codable {
     let timestamp : Date
-    let cityName : String
     let humidity : Int32
     let temperature : Double
     let windspeed : Double

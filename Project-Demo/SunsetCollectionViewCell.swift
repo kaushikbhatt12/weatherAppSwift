@@ -18,14 +18,7 @@ class SunsetCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 10
     }
     
-    func configure(with sunset: String) {
-        if let sunsetTimestamp = TimeInterval(sunset)
-        {
-            let sunsetDate = Date(timeIntervalSince1970: sunsetTimestamp)
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:mm a"
-            let formattedSunsetTime = dateFormatter.string(from: sunsetDate)
-            sunsetLabel.text = "Sunset \n \(formattedSunsetTime)"
-        }
+    func configure(_ weatherData: WeatherCardData) {
+        sunsetLabel.text = weatherData.value
     }
 }

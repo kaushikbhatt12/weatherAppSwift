@@ -81,19 +81,19 @@ class DetailCollectionViewController: UICollectionViewController {
                 return cell
             case AppConstants.HUMIDITY:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.HUMIDITY, for: indexPath) as! HumidityCollectionViewCell
-                cell.configure(with: weatherData.value)
+                cell.configure(weatherData)
                 return cell
             case AppConstants.WIND:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.WIND, for: indexPath) as! WindCollectionViewCell
-                cell.configure(with: weatherData.value)
+                cell.configure(weatherData)
                 return cell
             case AppConstants.SUNRISE:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.SUNRISE, for: indexPath) as! SunriseCollectionViewCell
-                cell.configure(with: weatherData.value)
+                cell.configure(weatherData)
                 return cell
             case AppConstants.SUNSET:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.SUNSET, for: indexPath) as! SunsetCollectionViewCell
-                cell.configure(with: weatherData.value)
+                cell.configure(weatherData)
                 return cell
             default:
                 return UICollectionViewCell()

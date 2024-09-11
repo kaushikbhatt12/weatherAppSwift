@@ -17,7 +17,7 @@ class HumidityCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 10
     }
     
-    func configure(with humidity: String ) {
-        humidityLabel.text = "Humidity \n \(humidity)%"
+    func configure(_ weatherData : WeatherCardData) {
+        humidityLabel.text = weatherData.value
     }
 }

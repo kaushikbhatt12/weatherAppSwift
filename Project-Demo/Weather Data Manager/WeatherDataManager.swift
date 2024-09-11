@@ -34,7 +34,6 @@ import UIKit
                     } else {
                         let weatherDataModel = WeatherDataModel(
                             timestamp: currentWeather.timestamp!,
-                            cityName: city.name!,
                             humidity: currentWeather.humidity,
                             temperature: currentWeather.temperature,
                             windspeed: currentWeather.windspeed,
@@ -74,7 +73,7 @@ import UIKit
     
     private func isWeatherDataStale(timestamp : Date) -> Bool {
         let timeDifference = Date().timeIntervalSince(timestamp)
-        return timeDifference > 14400
+        return timeDifference > AppConstants.TIME_CONSTANT
     }
     
     func fetchDataFromApi(_ cityName: String, _ lat : Double, _ long: Double,completion: @escaping (WeatherDataModel?) -> Void){
@@ -82,7 +81,6 @@ import UIKit
             if let weatherResponse = WeatherResponse {
                 let weatherDataModel = WeatherDataModel(
                     timestamp: Date(),
-                    cityName: cityName,
                     humidity: Int32(weatherResponse.main.humidity),
                     temperature: weatherResponse.main.temp,
                     windspeed: weatherResponse.wind.speed,

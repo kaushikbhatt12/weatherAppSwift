@@ -21,6 +21,7 @@ struct AppConstants {
     static let WIND = "Wind"
     static let SUNSET  = "Sunset"
     static let SUNRISE = "Sunrise"
+    static let TIME_CONSTANT : Double = 14400
 }
 
 
