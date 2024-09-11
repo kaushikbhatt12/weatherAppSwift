@@ -63,6 +63,13 @@ class DetailCollectionViewController: UICollectionViewController {
         // #warning Incomplete implementation, return the number of items
         return weatherCardDataArray.count
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        // Invalidate the collection view layout to recalculate the cell sizes
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let weatherData = weatherCardDataArray[indexPath.row]
@@ -134,7 +141,7 @@ class DetailCollectionViewController: UICollectionViewController {
 
 extension DetailCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width-10, height: 200)
+        return CGSize(width: collectionView.frame.width-20, height: 200)
     }
 }
 
