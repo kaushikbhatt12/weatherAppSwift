@@ -21,7 +21,7 @@
                     } else {
                         NSError *error = [NSError errorWithDomain:@"CityNotFound"
                                                              code:404
-                                                         userInfo:@{NSLocalizedDescriptionKey: @"City not found"}];
+                                                         userInfo:@{NSLocalizedDescriptionKey: Messages.CITY_NOT_FOUND}];
                         [self.delegate didFailWithError:error];
                     }
                 });
