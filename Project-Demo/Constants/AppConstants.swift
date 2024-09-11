@@ -7,23 +7,22 @@
 
 import Foundation
 
-struct AppConstants {
-    
-    static let cityNames: [String] = [
+@objc class AppConstants: NSObject {
+    @objc static let cityNames: [String] = [
         "London", "Paris", "Berlin", "Madrid", "Rome", "Vienna"
     ]
-    static let CITY_MODEL = "CityModel"
-    static let CITY_ENTITY = "City"
-    static let CITY_ENTITY_NAME_ATTRIBUTE = "name"
-    static let CITY_SEARCH_PREDICATE = "name == [c] %@"
-    static let TEMPERATURE = "Temperature"
-    static let HUMIDITY = "Humidity"
-    static let WIND = "Wind"
-    static let SUNSET  = "Sunset"
-    static let SUNRISE = "Sunrise"
-    static let TIME_CONSTANT : Double = 14400
+    @objc static let CITY_MODEL = "CityModel"
+    @objc static let CITY_ENTITY = "City"
+    @objc static let CITY_ENTITY_NAME_ATTRIBUTE = "name"
+    @objc static let CITY_SEARCH_PREDICATE = "name == [c] %@"
+    @objc static let TEMPERATURE = "Temperature"
+    @objc static let HUMIDITY = "Humidity"
+    @objc static let WIND = "Wind"
+    @objc static let SUNSET = "Sunset"
+    @objc static let SUNRISE = "Sunrise"
+    @objc static let TIME_CONSTANT: Double = 14400
+    @objc static let SHOW_WEATHER = "showWeather"
 }
-
 
 struct ApiConstants {
     static let GET = "GET"
@@ -40,5 +39,5 @@ struct ApiConstants {
     @objc static let WEATHER_FETCH_FAILED = "Failed to fetch weather data."
     @objc static let ERROR = "Error"
     @objc static let OK = "OK"
-    @objc static let SHOW_WEATHER = "showWeather"
+    @objc static let WEATHER_DATA_ERROR = "WeatherDataError"
 }

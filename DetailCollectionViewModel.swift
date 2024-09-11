@@ -31,7 +31,7 @@ class DetailCollectionViewModel {
                         ]
                         self.delegate?.didUpdateWeatherData(weatherCardDataArray)
                     } else {
-                        self.delegate?.didFailWithError(NSError(domain: "WeatherDataError", code: -1, userInfo: [NSLocalizedDescriptionKey: Messages.WEATHER_FETCH_FAILED]))
+                        self.delegate?.didFailWithError(NSError(domain: Messages.WEATHER_DATA_ERROR, code: -1, userInfo: [NSLocalizedDescriptionKey: Messages.WEATHER_FETCH_FAILED]))
                     }
                 }
             }

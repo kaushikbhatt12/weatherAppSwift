@@ -8,7 +8,6 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import "WeatherModel.h"
-#import "Project_Demo-Swift.h"
 
 @interface ViewController () <WeatherModelDelegate>
 
@@ -47,7 +46,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:Messages.SHOW_WEATHER]) {
+    if ([segue.identifier isEqualToString:AppConstants.SHOW_WEATHER]) {
         DetailCollectionViewController *destinationVC = segue.destinationViewController;
         destinationVC.cityName = self.selectedCityName; 
         // Pass the city name latitude and longitude
@@ -73,13 +72,13 @@
         self.selectedCityName = city.name;
         self.longitude = @(city.longitude);
         self.latitude = @(city.latitude);
-        [self performSegueWithIdentifier:Messages.SHOW_WEATHER sender:self];
+        [self performSegueWithIdentifier:AppConstants.SHOW_WEATHER sender:self];
     }
 }
 
 - (void)didFailWithError:(NSError * _Nonnull)error {
     NSLog(@"Error: %@", error.localizedDescription);
-    [self showAlertWithTitle:@"Error" message:error.localizedDescription];
+    [self showAlertWithTitle:Messages.ERROR message:error.localizedDescription];
 }
 
 @end
