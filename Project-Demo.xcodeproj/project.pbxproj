@@ -11,7 +11,7 @@
 		A803AC332C8F01D7009D61F9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A803AC322C8F01D7009D61F9 /* CoreDataManager.swift */; };
 		A8083CB12C8844C8002E02E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8083CB02C8844C8002E02E3 /* AppDelegate.m */; };
 		A8083CB42C8844C8002E02E3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8083CB32C8844C8002E02E3 /* SceneDelegate.m */; };
-		A8083CB72C8844C8002E02E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8083CB62C8844C8002E02E3 /* ViewController.m */; };
+		A8083CB72C8844C8002E02E3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8083CB62C8844C8002E02E3 /* HomeViewController.m */; };
 		A8083CBA2C8844C8002E02E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A8083CB92C8844C8002E02E3 /* Base */; };
 		A8083CBF2C8844CB002E02E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8083CBE2C8844CB002E02E3 /* Assets.xcassets */; };
 		A8083CC22C8844CB002E02E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A8083CC12C8844CB002E02E3 /* Base */; };
@@ -67,8 +67,8 @@
 		A8083CB02C8844C8002E02E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A8083CB22C8844C8002E02E3 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		A8083CB32C8844C8002E02E3 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		A8083CB52C8844C8002E02E3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A8083CB62C8844C8002E02E3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A8083CB52C8844C8002E02E3 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		A8083CB62C8844C8002E02E3 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		A8083CB92C8844C8002E02E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A8083CBE2C8844CB002E02E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8083CC12C8844CB002E02E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -191,8 +191,8 @@
 				A8083CB02C8844C8002E02E3 /* AppDelegate.m */,
 				A8083CB22C8844C8002E02E3 /* SceneDelegate.h */,
 				A8083CB32C8844C8002E02E3 /* SceneDelegate.m */,
-				A8083CB52C8844C8002E02E3 /* ViewController.h */,
-				A8083CB62C8844C8002E02E3 /* ViewController.m */,
+				A8083CB52C8844C8002E02E3 /* HomeViewController.h */,
+				A8083CB62C8844C8002E02E3 /* HomeViewController.m */,
 				A8CE296C2C91381A00AE814E /* WeatherModel.h */,
 				A8CE296D2C91389900AE814E /* WeatherModel.m */,
 				A8CE296B2C9137B600AE814E /* WeatherModelDelegate.h */,
@@ -429,7 +429,7 @@
 				A8E4D8EF2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift in Sources */,
 				A803AC2D2C8EF3CD009D61F9 /* WeatherAPIManager.swift in Sources */,
 				A83C0F632C8CF1280046D1D6 /* SunriseCollectionViewCell.swift in Sources */,
-				A8083CB72C8844C8002E02E3 /* ViewController.m in Sources */,
+				A8083CB72C8844C8002E02E3 /* HomeViewController.m in Sources */,
 				A8083CF62C899925002E02E3 /* NetworkManager.swift in Sources */,
 				A8243BD62C8DC99200842CE7 /* SunsetCollectionViewCell.swift in Sources */,
 				A8E5D1B12C905B8B0084DECF /* DetailCollectionViewModel.swift in Sources */,

@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "Project_Demo-Swift.h"
 
-@interface ViewController : UIViewController
+@interface HomeViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 

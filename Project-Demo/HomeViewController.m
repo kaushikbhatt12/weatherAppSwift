@@ -5,11 +5,11 @@
 //  Created by kaushik.bha on 04/09/24.
 //
 
-#import "ViewController.h"
+#import "HomeViewController.h"
 #import "AppDelegate.h"
 #import "WeatherModel.h"
 
-@interface ViewController () <WeatherModelDelegate>
+@interface HomeViewController () <WeatherModelDelegate>
 
 @property (strong, nonatomic) NSString *selectedCityName;
 @property (strong, nonatomic) NSNumber *longitude;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation ViewController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
