@@ -22,6 +22,7 @@ import Foundation
     @objc static let SUNRISE = "Sunrise"
     @objc static let TIME_CONSTANT: Double = 14400
     @objc static let SHOW_WEATHER = "showWeather"
+    @objc static let CELL = "Cell"
 }
 
 struct ApiConstants {

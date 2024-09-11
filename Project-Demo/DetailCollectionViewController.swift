@@ -7,7 +7,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = AppConstants.CELL
 
 class DetailCollectionViewController: UICollectionViewController {
     
