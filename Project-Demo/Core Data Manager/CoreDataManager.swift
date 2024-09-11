@@ -28,16 +28,16 @@ import CoreData
     }
     
     @objc func addCities() {
-        
-        let cityNames = AppConstants.cityNames
-        for cityName in cityNames {
-            let newCity = NSEntityDescription.insertNewObject(forEntityName: AppConstants.CITY_ENTITY, into: context)
-            let lowercaseCityName = cityName.lowercased()
-            newCity.setValue(lowercaseCityName, forKey: AppConstants.CITY_ENTITY_NAME_ATTRIBUTE)
+        for (index, city) in AppConstants.cityData.enumerated() {
+            CoreDataManager.shared.saveCityData(for: city.cityName, cityData: city) { savedCity in
+                if let savedCity = savedCity {
+                    // Save the weather data for the city with the timestamp
+                    let weatherData = AppConstants.weatherData[index]
+                    CoreDataManager.shared.saveWeatherData(for: savedCity.name!, weatherData: weatherData)
+                    print("City and weather data with timestamp saved for \(savedCity.name!)")
+                }
+            }
         }
-        
-        saveContext()
-        print("Cities added successfully")
     }
     
     private func saveContext() {
