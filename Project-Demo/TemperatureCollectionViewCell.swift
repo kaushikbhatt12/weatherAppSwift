@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class TemperatureCollectionViewCell: UICollectionViewCell {
     
@@ -25,7 +26,6 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
         // Initialization code, if any
         layer.cornerRadius = 10
     
-        
     }
     
     func configure(_ weatherData: WeatherCardData) {
@@ -34,15 +34,8 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
         weatherDescriptionLabel.text = weatherData.description
         
         if let imageParameter = weatherData.image {
-            DispatchQueue.global(qos: .background).async {
-                NetworkManager.shared.fetchImageIcon(for: imageParameter) { data in
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            self.weatherIcon.image = UIImage(data: data)
-                        }
-                    }
-                }
-            }
+            let imageUrl = URL(string : APIManager.getIconEndPoint(imageParameter: imageParameter))
+            weatherIcon.sd_setImage(with: imageUrl)
         }
     }
 }
