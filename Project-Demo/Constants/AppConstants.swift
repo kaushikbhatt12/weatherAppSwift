@@ -12,7 +12,6 @@ struct AppConstants {
     static let cityNames: [String] = [
         "London", "Paris", "Berlin", "Madrid", "Rome", "Vienna"
     ]
-    
     static let CITY_MODEL = "CityModel"
     static let CITY_ENTITY = "City"
     static let CITY_ENTITY_NAME_ATTRIBUTE = "name"

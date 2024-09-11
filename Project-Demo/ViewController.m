@@ -7,12 +7,15 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
+#import "WeatherModel.h"
 #import "Project_Demo-Swift.h"
 
-@interface ViewController ()
+@interface ViewController () <WeatherModelDelegate>
+
 @property (strong, nonatomic) NSString *selectedCityName;
 @property (strong, nonatomic) NSNumber *longitude;
 @property (strong, nonatomic) NSNumber *latitude;
+@property (strong, nonatomic) WeatherModel *weatherModel;
 
 @end
 
@@ -27,35 +30,17 @@
     self.weatherButton.layer.cornerRadius = 10.0;
     self.weatherButton.clipsToBounds = YES;
     
-}
-
-- (NSManagedObjectContext *)managedObjectContext {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    return appDelegate.persistentContainer.viewContext;
+    // Initialize the model and set the delegate
+    self.weatherModel = [[WeatherModel alloc] init];
+    self.weatherModel.delegate = self;
 }
 
 
 - (IBAction)getWeather:(id)sender {
     NSString *cityName = self.searchBar.text;
     if (cityName.length > 0) {
-        // Perform the network or Core Data fetch in a background queue
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-            [[WeatherDataManager shared] getCityDataWithName:cityName completion:^(City * _Nullable city) {
-                // Switch back to the main thread for UI updates
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (city) {
-                        NSLog(@"City found: %@", city.name);
-                        self.selectedCityName = city.name;
-                        self.longitude = @(city.longitude);
-                        self.latitude = @(city.latitude);
-                        [self performSegueWithIdentifier:Messages.SHOW_WEATHER sender:self];
-                    } else {
-                        NSLog(@"City not found.");
-                        [self showAlertWithTitle:Messages.CITY_NOT_FOUND message:Messages.CITY_NOT_FOUND_MESSAGE];
-                    }
-                });
-            }];
-        });
+        // Delegate the task to the model
+        [self.weatherModel fetchCityDataWithName:cityName];
     } else {
         NSLog(@"Please enter a city name.");
     }
@@ -80,6 +65,21 @@
                                                        handler:nil];
     [alertController addAction:okAction];
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)didFetchCityData:(City * _Nullable)city {
+    if (city) {
+        NSLog(@"City found: %@", city.name);
+        self.selectedCityName = city.name;
+        self.longitude = @(city.longitude);
+        self.latitude = @(city.latitude);
+        [self performSegueWithIdentifier:Messages.SHOW_WEATHER sender:self];
+    }
+}
+
+- (void)didFailWithError:(NSError * _Nonnull)error {
+    NSLog(@"Error: %@", error.localizedDescription);
+    [self showAlertWithTitle:@"Error" message:error.localizedDescription];
 }
 
 @end
