@@ -9,7 +9,12 @@ import UIKit
 
 private let reuseIdentifier = AppConstants.CELL
 
-class DetailCollectionViewController: UICollectionViewController {
+@objc protocol DetailCollectionViewProtocol : AnyObject {
+    func weatherDataFetched(_ weatherCardArray : [WeatherCardData]) -> Void
+    func failedWithError(_ error : Error) -> Void
+}
+
+@objc class DetailCollectionViewController: UICollectionViewController {
     
     @objc var cityName : String?
     @objc var lon: NSNumber?
@@ -19,17 +24,15 @@ class DetailCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
    
-    private let viewModel = DetailCollectionViewModel()
+    @objc var viewModel: DetailCollectionViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.delegate = self
-        
         spinner.startAnimating()
         
         if let cityName = cityName {
-            viewModel.fetchWeatherData(cityName: cityName, latitude: lat as! Double, longitude: lon as! Double)
+            self.viewModel?.fetchWeatherData(cityName: cityName, latitude: lat as! Double, longitude: lon as! Double)
         }
     
         // Uncomment the following line to preserve selection between presentations
@@ -145,16 +148,16 @@ extension DetailCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension DetailCollectionViewController: DetailCollectionViewModelDelegate {
-    func didUpdateWeatherData(_ weatherData: [WeatherCardData]) {
-        self.weatherCardDataArray = weatherData
+extension DetailCollectionViewController: DetailCollectionViewProtocol {
+    @objc func weatherDataFetched( _ weatherCardArray : [WeatherCardData]) {
+        self.weatherCardDataArray = weatherCardArray
         self.collectionView.reloadData()
         self.spinner.stopAnimating()
     }
     
-    func didFailWithError(_ error: Error) {
+    @objc func failedWithError(_ error: any Error) {
         self.spinner.stopAnimating()
-        // Show error alert to user
+        // show error alert
         let alert = UIAlertController(title: Messages.ERROR, message: error.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: Messages.OK, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)

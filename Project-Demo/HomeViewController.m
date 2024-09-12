@@ -32,6 +32,7 @@
     // Initialize the model and set the delegate
     self.weatherModel = [[WeatherModel alloc] init];
     self.weatherModel.delegate = self;
+    
 }
 
 
@@ -47,8 +48,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:AppConstants.SHOW_WEATHER]) {
-        DetailCollectionViewController *destinationVC = segue.destinationViewController;
-        destinationVC.cityName = self.selectedCityName; 
+        DetailCollectionViewController *destinationVC = (DetailCollectionViewController *)segue.destinationViewController;
+        
+        DetailCollectionViewModel * viewModel = [[DetailCollectionViewModel alloc] init];
+        
+        destinationVC.viewModel = viewModel;
+        viewModel.view = destinationVC;
+        
+        destinationVC.cityName = self.selectedCityName;
         // Pass the city name latitude and longitude
         destinationVC.lon = self.longitude;
         destinationVC.lat = self.latitude;

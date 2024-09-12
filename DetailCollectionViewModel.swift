@@ -6,16 +6,15 @@
 //
 import Foundation
 
-protocol DetailCollectionViewModelDelegate: AnyObject {
-    func didUpdateWeatherData(_ weatherData: [WeatherCardData])
-    func didFailWithError(_ error: Error)
+@objc protocol DetailCollectionViewModelProtocol {
+    func fetchWeatherData( cityName: String, latitude: Double, longitude: Double) -> Void
 }
 
-class DetailCollectionViewModel {
+@objc class DetailCollectionViewModel: NSObject, DetailCollectionViewModelProtocol {
     
-    weak var delegate: DetailCollectionViewModelDelegate?
+    @objc weak var view : DetailCollectionViewProtocol?
     
-    func fetchWeatherData(cityName: String, latitude : Double, longitude: Double) {
+    @objc func fetchWeatherData(cityName: String, latitude : Double, longitude: Double) {
         DispatchQueue.global(qos: .background).async {
             WeatherDataManager.shared.getWeatherData(cityName, latitude , longitude) { [weak self] weatherDataModel in
                 DispatchQueue.main.async {
@@ -29,9 +28,9 @@ class DetailCollectionViewModel {
                             WeatherCardData(type: AppConstants.SUNRISE, value: "Sunrise \n \(formatTime(from: weatherData.sunrise))", image: nil, description: nil),
                             WeatherCardData(type: AppConstants.SUNSET, value: "Sunset \n \(formatTime(from: weatherData.sunset))", image: nil, description: nil)
                         ]
-                        self.delegate?.didUpdateWeatherData(weatherCardDataArray)
+                        self.view?.weatherDataFetched(weatherCardDataArray)
                     } else {
-                        self.delegate?.didFailWithError(NSError(domain: Messages.WEATHER_DATA_ERROR, code: -1, userInfo: [NSLocalizedDescriptionKey: Messages.WEATHER_FETCH_FAILED]))
+                        self.view?.failedWithError(NSError(domain: Messages.WEATHER_DATA_ERROR, code: -1, userInfo: [NSLocalizedDescriptionKey: Messages.WEATHER_FETCH_FAILED]))
                     }
                 }
             }

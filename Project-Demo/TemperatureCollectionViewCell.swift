@@ -31,7 +31,7 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
     func configure(_ weatherData: WeatherCardData) {
         
         temperatureLabel.text = weatherData.value
-        weatherDescriptionLabel.text = weatherData.description
+        weatherDescriptionLabel.text = weatherData.descriptionText
         
         if let imageUrl = weatherData.image {
             weatherIcon.sd_setImage(with: imageUrl)

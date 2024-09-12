@@ -30,12 +30,20 @@ struct WeatherDataModel: Codable {
     let weatherDescription : String
 }
 
-struct WeatherCardData {
-    let type: String
-    let value: String
-    let image: URL?
-    let description: String?
+@objc class WeatherCardData: NSObject {
+    @objc var type: String
+    @objc var value: String
+    @objc var image: URL?
+    @objc var descriptionText: String?
+    
+    @objc init(type: String, value: String, image: URL?, description: String?) {
+        self.type = type
+        self.value = value
+        self.image = image
+        self.descriptionText = description
+    }
 }
+
 
 struct WeatherResponse: Codable {
     let coord: Coord
