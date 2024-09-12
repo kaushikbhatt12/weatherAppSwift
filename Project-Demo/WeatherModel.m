@@ -19,7 +19,7 @@
                     if (city) {
                         [self.delegate didFetchCityData:city];
                     } else {
-                        NSError *error = [NSError errorWithDomain:@"CityNotFound"
+                        NSError *error = [NSError errorWithDomain:AppConstants.CITY_NOT_FOUND
                                                              code:404
                                                          userInfo:@{NSLocalizedDescriptionKey: Messages.CITY_NOT_FOUND}];
                         [self.delegate didFailWithError:error];
