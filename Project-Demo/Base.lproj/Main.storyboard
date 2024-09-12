@@ -97,28 +97,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ihe-Dg-FN0">
-                                            <rect key="frame" x="71" y="21" width="158" height="108"/>
+                                            <rect key="frame" x="64.666666666666671" y="15.666666666666664" width="170.66666666666663" height="118.66666666666669"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iaW-Ub-LYW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="158" height="54"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="170.66666666666666" height="59.333333333333336"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O6t-Ml-oEv">
-                                                            <rect key="frame" x="0.0" y="0.0" width="79" height="54"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="85.333333333333329" height="59.333333333333336"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuM-SV-h18">
-                                                            <rect key="frame" x="79" y="0.0" width="79" height="54"/>
-                                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="28"/>
+                                                            <rect key="frame" x="85.333333333333343" y="0.0" width="85.333333333333343" height="59.333333333333336"/>
+                                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="37"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nkh-vo-G2A">
-                                                    <rect key="frame" x="0.0" y="54" width="158" height="54"/>
+                                                    <rect key="frame" x="0.0" y="59.333333333333329" width="170.66666666666666" height="59.333333333333329"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2w-3N-YqY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="158" height="54"/>
-                                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="170.66666666666666" height="59.333333333333336"/>
+                                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="28"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -153,8 +153,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzE-Pq-M6O">
-                                            <rect key="frame" x="118" y="52.666666666666657" width="64.333333333333314" height="45"/>
-                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="28"/>
+                                            <rect key="frame" x="124.66666666666667" y="57.333333333333329" width="50.666666666666671" height="35.333333333333329"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -183,8 +183,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPe-Dp-kgE">
-                                            <rect key="frame" x="118" y="52.666666666666657" width="64.333333333333314" height="45"/>
-                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="28"/>
+                                            <rect key="frame" x="124.66666666666667" y="57.333333333333329" width="50.666666666666671" height="35.333333333333329"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -213,8 +213,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckq-sZ-EJ9">
-                                            <rect key="frame" x="118" y="52.666666666666657" width="64.333333333333314" height="45"/>
-                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="28"/>
+                                            <rect key="frame" x="124.66666666666667" y="57.333333333333329" width="50.666666666666671" height="35.333333333333329"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -243,8 +243,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqw-rJ-C4j">
-                                            <rect key="frame" x="118" y="52.666666666666657" width="64.333333333333314" height="45"/>
-                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="28"/>
+                                            <rect key="frame" x="124.66666666666667" y="57.333333333333329" width="50.666666666666671" height="35.333333333333329"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -296,6 +296,7 @@
             <point key="canvasLocation" x="50.724637681159422" y="-15.489130434782609"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="tintColor"/>
     <resources>
         <image name="background" width="385" height="626"/>
         <image name="humidity2" width="3000" height="2000"/>
