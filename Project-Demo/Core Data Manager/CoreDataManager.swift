@@ -40,6 +40,19 @@ import CoreData
         }
     }
     
+    @objc func addCities() {
+        for (index, city) in AppConstants.cityData.enumerated() {
+            CoreDataManager.shared.saveCityData(for: city.cityName, cityData: city) { savedCity in
+                if let savedCity = savedCity {
+                    // Save the weather data for the city with the timestamp
+                    let weatherData = AppConstants.weatherData[index]
+                    CoreDataManager.shared.saveWeatherData(for: savedCity.name!, weatherData: weatherData)
+                    print("City and weather data with timestamp saved for \(savedCity.name!)")
+                }
+            }
+        }
+    }
+    
     @objc func fetchCity(withName cityName: String, completion: @escaping (City?) -> Void) {
         let fetchRequest: NSFetchRequest<City> = City.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: AppConstants.CITY_SEARCH_PREDICATE, cityName)
