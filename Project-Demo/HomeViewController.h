@@ -14,6 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *weatherButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *getWeatherButton;
+
+
 - (IBAction)getWeather:(id)sender;
 
 @end

@@ -57,6 +57,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="WeatherApp" id="a2i-jB-UQI"/>
                     <connections>
+                        <outlet property="getWeatherButton" destination="qpN-6G-U8y" id="aro-fp-HpS"/>
                         <outlet property="searchBar" destination="Aw8-Iv-yCe" id="D4B-CI-Wz0"/>
                         <outlet property="weatherButton" destination="qpN-6G-U8y" id="lWk-tU-L3b"/>
                         <segue destination="Dde-3l-heH" kind="show" identifier="showWeather" id="Oep-rv-OxH"/>
@@ -102,7 +103,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iaW-Ub-LYW">
                                                     <rect key="frame" x="0.0" y="0.0" width="170.66666666666666" height="59.333333333333336"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O6t-Ml-oEv">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O6t-Ml-oEv">
                                                             <rect key="frame" x="0.0" y="0.0" width="85.333333333333329" height="59.333333333333336"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuM-SV-h18">

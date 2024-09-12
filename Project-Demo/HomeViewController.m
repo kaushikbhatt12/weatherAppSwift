@@ -35,8 +35,19 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.getWeatherButton.enabled = YES;
+}
 
 - (IBAction)getWeather:(id)sender {
+    
+    if (!self.getWeatherButton.enabled) {
+        return;
+    }
+    
+    self.getWeatherButton.enabled = false;
+    
     NSString *cityName = self.searchBar.text;
     if (cityName.length > 0) {
         // Delegate the task to the model
@@ -84,6 +95,7 @@
 
 - (void)didFailWithError:(NSError * _Nonnull)error {
     NSLog(@"Error: %@", error.localizedDescription);
+    self.getWeatherButton.enabled = YES;
     [self showAlertWithTitle:Messages.ERROR message:error.localizedDescription];
 }
 
