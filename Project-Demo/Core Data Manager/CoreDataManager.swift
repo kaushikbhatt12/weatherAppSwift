@@ -27,19 +27,6 @@ import CoreData
         return persistentContainer.viewContext
     }
     
-    @objc func addCities() {
-        for (index, city) in AppConstants.cityData.enumerated() {
-            CoreDataManager.shared.saveCityData(for: city.cityName, cityData: city) { savedCity in
-                if let savedCity = savedCity {
-                    // Save the weather data for the city with the timestamp
-                    let weatherData = AppConstants.weatherData[index]
-                    CoreDataManager.shared.saveWeatherData(for: savedCity.name!, weatherData: weatherData)
-                    print("City and weather data with timestamp saved for \(savedCity.name!)")
-                }
-            }
-        }
-    }
-    
     private func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -86,7 +73,6 @@ import CoreData
     func saveWeatherData(for cityName: String, weatherData: WeatherDataModel) {
         let fetchRequest: NSFetchRequest<City> = City.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: AppConstants.CITY_SEARCH_PREDICATE, cityName)
-        
         do {
             let cities = try context.fetch(fetchRequest)
             let city = cities.first ?? City(context: context)
@@ -100,7 +86,7 @@ import CoreData
             weather.sunrise = Int32(weatherData.sunrise)
             weather.weatherIcon = weatherData.weatherIcon
             weather.weatherDescription = weatherData.weatherDescription
-            weather.timestamp = Date()
+            weather.timestamp = weatherData.timestamp
             
             city.weather = weather
             
