@@ -50,3 +50,10 @@ struct ApiConstants {
     @objc static let OK = "OK"
     @objc static let WEATHER_DATA_ERROR = "WeatherDataError"
 }
+
+@objc class COLLECTION_VIEW_CELL_CONSTANTS : NSObject {
+    @objc static let CELL_SPACING : CGFloat = 10            
+    @objc static let CELL_INSETS : CGFloat = 10
+    @objc static let MINIMUM_LINE_SPACING : CGFloat = 10
+    @objc static let MINIMUM_INTER_ITEM_SPACING : CGFloat = 10
+}

@@ -160,7 +160,7 @@ extension DetailCollectionViewController: UICollectionViewDelegateFlowLayout {
         let totalSafeAreaHeight = collectionView.safeAreaLayoutGuide.layoutFrame.height
         let totalWidth = view.bounds.width
         
-        let spacing: CGFloat = 10
+        let spacing = COLLECTION_VIEW_CELL_CONSTANTS.CELL_SPACING
         
         if indexPath.item == 0 {
             // First cell takes 40% of the total height and full width
@@ -179,15 +179,15 @@ extension DetailCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         // Ensure there is padding around the edges of the cells
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: COLLECTION_VIEW_CELL_CONSTANTS.CELL_INSETS, left: COLLECTION_VIEW_CELL_CONSTANTS.CELL_INSETS, bottom: COLLECTION_VIEW_CELL_CONSTANTS.CELL_INSETS, right: COLLECTION_VIEW_CELL_CONSTANTS.CELL_INSETS)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10 // Spacing between rows
+        return COLLECTION_VIEW_CELL_CONSTANTS.MINIMUM_LINE_SPACING // Spacing between rows
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10 // Spacing between items in the same row
+        return COLLECTION_VIEW_CELL_CONSTANTS.MINIMUM_INTER_ITEM_SPACING // Spacing between items in the same row
     }
 }
 
