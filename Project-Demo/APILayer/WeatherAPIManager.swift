@@ -9,7 +9,7 @@ import Foundation
 
 class APIManager {
     
-    static let API_KEY = ApiConstants.API_KEY
+    private static let API_KEY = ApiConstants.API_KEY
     
     static func getCitySearchAPIEndpoint(cityName: String) -> String {
         let apiUrlStr = String(format: ApiConstants.getCoordinatesApiEndPoint,ApiConstants.BASE_URL ,cityName,API_KEY)

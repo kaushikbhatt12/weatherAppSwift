@@ -56,7 +56,6 @@
         viewModel.view = destinationVC;
         
         destinationVC.cityName = self.selectedCityName;
-        // Pass the city name latitude and longitude
         destinationVC.lon = self.longitude;
         destinationVC.lat = self.latitude;
     }

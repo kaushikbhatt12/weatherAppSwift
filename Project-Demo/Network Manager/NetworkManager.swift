@@ -98,25 +98,4 @@ class NetworkManager {
         }
         task.resume()
     }
-    
-    func fetchImageIcon(for imageParameter : String, completion: @escaping (Data?) -> Void) {
-        let apiUrlStr = APIManager.getIconEndPoint(imageParameter: imageParameter)
-        
-        guard let url = URL(string: apiUrlStr) else {
-            print("Invalid URL")
-            completion(nil)
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data, error == nil {
-                completion(data)
-            } else {
-                completion(nil)
-            }
-        }
-        
-        task.resume()
-    }
-    
 }

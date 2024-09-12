@@ -12,34 +12,6 @@ import CoreData
     
     private override init() {}
     
-    private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: AppConstants.CITY_MODEL)
-        container.loadPersistentStores { storeDescription, error in
-            if let error = error as NSError? {
-                // handle error
-                print("Unresolved error \(error), \(error.userInfo)")
-            }
-        }
-        return container
-    }()
-    
-    private var context: NSManagedObjectContext {
-        return persistentContainer.viewContext
-    }
-    
-    private func saveContext() {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                // handle error
-                print("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
-    
     @objc func addCities() {
         for (index, city) in AppConstants.cityData.enumerated() {
             CoreDataManager.shared.saveCityData(for: city.cityName, cityData: city) { savedCity in
@@ -106,6 +78,34 @@ import CoreData
             try context.save()
         } catch {
             print("Error saving weather data to Core Data: \(error)")
+        }
+    }
+    
+    private lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: AppConstants.CITY_MODEL)
+        container.loadPersistentStores { storeDescription, error in
+            if let error = error as NSError? {
+                // handle error
+                print("Unresolved error \(error), \(error.userInfo)")
+            }
+        }
+        return container
+    }()
+    
+    private var context: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
+    
+    private func saveContext() {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                // handle error
+                print("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
         }
     }
 }

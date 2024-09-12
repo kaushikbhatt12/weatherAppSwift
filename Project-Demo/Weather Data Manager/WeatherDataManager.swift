@@ -13,8 +13,36 @@ import UIKit
     @objc static let shared = WeatherDataManager()
     @objc override private init() {}
     
-    let networkManager = NetworkManager.shared
-    let coreDataManager = CoreDataManager.shared
+    private let networkManager = NetworkManager.shared
+    private let coreDataManager = CoreDataManager.shared
+    
+    @objc func getCityData(withName cityName: String, completion: @escaping (City?)->Void) {
+        coreDataManager.fetchCity(withName: cityName) { city in
+            if let city = city {
+                // city found in core data
+                completion(city)
+            } else {
+                // api call since city not found in core data
+                self.networkManager.fetchCityData(for: cityName) { data in
+                    if let (name, latitude, longitude ) = data {
+                        if cityName.caseInsensitiveCompare(name) == .orderedSame {
+                            let cityData = CityModel(cityName: name, lat: latitude, lon: longitude)
+                            self.coreDataManager.saveCityData(for: name, cityData: cityData) { city in
+                                if let city = city {
+                                    completion(city)
+                                }
+                            }
+                        } else {
+                            completion(nil)
+                        }
+                    } else {
+                        // city does not exist
+                        completion(nil)
+                    }
+                }
+            }
+        }
+    }
     
     func getWeatherData(_ cityName: String,_ latitude : Double, _ longitude: Double, completion: @escaping (WeatherDataModel?) -> Void) {
         // Check in Core Data if weather data for the city is present
@@ -76,7 +104,7 @@ import UIKit
         return timeDifference > AppConstants.TIME_CONSTANT
     }
     
-    func fetchDataFromApi(_ cityName: String, _ lat : Double, _ long: Double,completion: @escaping (WeatherDataModel?) -> Void){
+    private func fetchDataFromApi(_ cityName: String, _ lat : Double, _ long: Double,completion: @escaping (WeatherDataModel?) -> Void){
         self.networkManager.fetchWeatherData(latitude: lat, longitude: long) { WeatherResponse in
             if let weatherResponse = WeatherResponse {
                 let weatherDataModel = WeatherDataModel(
@@ -92,34 +120,6 @@ import UIKit
                 completion(weatherDataModel)
             } else {
                 completion(nil)
-            }
-        }
-    }
-    
-    @objc func getCityData(withName cityName: String, completion: @escaping (City?)->Void) {
-        coreDataManager.fetchCity(withName: cityName) { city in
-            if let city = city {
-                // city found in core data
-                completion(city)
-            } else {
-                // api call since city not found in core data
-                self.networkManager.fetchCityData(for: cityName) { data in
-                    if let (name, latitude, longitude ) = data {
-                        if cityName.caseInsensitiveCompare(name) == .orderedSame {
-                            let cityData = CityModel(cityName: name, lat: latitude, lon: longitude)
-                            self.coreDataManager.saveCityData(for: name, cityData: cityData) { city in
-                                if let city = city {
-                                    completion(city)
-                                }
-                            }
-                        } else {
-                            completion(nil)
-                        }
-                    } else {
-                        // city does not exist
-                        completion(nil)
-                    }
-                }
             }
         }
     }

@@ -150,12 +150,6 @@ private let reuseIdentifier = AppConstants.CELL
     
 }
 
-//extension DetailCollectionViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.safeAreaLayoutGuide.layoutFrame.width-20, height: 200)
-//    }
-//}
-
 // MARK: UICollectionViewDelegateFlowLayout
 
 extension DetailCollectionViewController: UICollectionViewDelegateFlowLayout {

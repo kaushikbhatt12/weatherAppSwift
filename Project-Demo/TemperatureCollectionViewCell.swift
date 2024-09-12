@@ -23,7 +23,6 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code, if any
         layer.cornerRadius = 10
     
     }
