@@ -9,12 +9,11 @@ import UIKit
 
 class HumidityCollectionViewCell: UICollectionViewCell {
     
-    
     @IBOutlet weak var humidityLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 10
+        layer.cornerRadius = LAYOUT_CONSTANTS.CORNER_RADIUS
     }
     
     func configure(_ weatherData : WeatherCardData) {

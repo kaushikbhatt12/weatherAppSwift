@@ -25,6 +25,7 @@ import Foundation
     @objc static let TEMPERATURE = "Temperature"
     @objc static let HUMIDITY = "Humidity"
     @objc static let WIND = "Wind"
+    @objc static let WIND_SPEED = "Wind Speed"
     @objc static let SUNSET = "Sunset"
     @objc static let SUNRISE = "Sunrise"
     @objc static let TIME_CONSTANT: Double = 14400
@@ -36,7 +37,7 @@ import Foundation
 struct ApiConstants {
     static let GET = "GET"
     static let API_KEY = ProcessInfo.processInfo.environment["apiKey"]!
-    static let BASE_URL = "https://api.openweathermap.org"
+    static let BASE_URL = ProcessInfo.processInfo.environment["baseURL"]!
     static let getCoordinatesApiEndPoint = "%@/geo/1.0/direct?q=%@&limit=1&appid=%@"
     static let getWeatherForCoordinatesApiEndPoint = "%@/data/2.5/weather?lat=%@&lon=%@&appid=%@"
     static let fetchImageEndPoint = "%@/img/w/%@.png"
@@ -51,8 +52,9 @@ struct ApiConstants {
     @objc static let WEATHER_DATA_ERROR = "WeatherDataError"
 }
 
-@objc class COLLECTION_VIEW_CELL_CONSTANTS : NSObject {
-    @objc static let CELL_SPACING : CGFloat = 10            
+@objc class LAYOUT_CONSTANTS : NSObject {
+    @objc static let CORNER_RADIUS : CGFloat = 10
+    @objc static let CELL_SPACING : CGFloat = 10
     @objc static let CELL_INSETS : CGFloat = 10
     @objc static let MINIMUM_LINE_SPACING : CGFloat = 10
     @objc static let MINIMUM_INTER_ITEM_SPACING : CGFloat = 10

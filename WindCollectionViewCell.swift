@@ -9,12 +9,11 @@ import UIKit
 
 class WindCollectionViewCell: UICollectionViewCell {
     
-    
     @IBOutlet weak var windLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 10
+        layer.cornerRadius = LAYOUT_CONSTANTS.CORNER_RADIUS
     }
     
     func configure(_ weatherData: WeatherCardData) {

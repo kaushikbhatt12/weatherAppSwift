@@ -23,10 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.searchBar.layer.cornerRadius = 10.0;
+    self.searchBar.layer.cornerRadius = LAYOUT_CONSTANTS.CORNER_RADIUS;
     self.searchBar.clipsToBounds = YES;
     
-    self.weatherButton.layer.cornerRadius = 10.0;
+    self.weatherButton.layer.cornerRadius = LAYOUT_CONSTANTS.CORNER_RADIUS;
     self.weatherButton.clipsToBounds = YES;
     
     // Initialize the model and set the delegate

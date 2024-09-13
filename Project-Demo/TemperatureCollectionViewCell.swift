@@ -11,19 +11,16 @@ import SDWebImage
 class TemperatureCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var temperatureLabel: UILabel!
-    
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
-    
     @IBOutlet weak var weatherIcon: UIImageView!
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        // Adjust the frame or bounds if necessary
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 10
+        layer.cornerRadius = LAYOUT_CONSTANTS.CORNER_RADIUS
     
     }
     
