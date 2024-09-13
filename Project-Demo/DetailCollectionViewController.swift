@@ -163,8 +163,8 @@ extension DetailCollectionViewController: UICollectionViewDelegateFlowLayout {
         let spacing = COLLECTION_VIEW_CELL_CONSTANTS.CELL_SPACING
         
         if indexPath.item == 0 {
-            // First cell takes 40% of the total height and full width
-            let firstCellHeight = totalSafeAreaHeight * 0.4
+            // First cell takes 45% of the total height and full width
+            let firstCellHeight = totalSafeAreaHeight * 0.45
             return CGSize(width: totalWidth - 2 * spacing, height: firstCellHeight)
         } else {
             // Remaining cells form a 2x2 grid that takes 50% of the total height
