@@ -29,6 +29,7 @@ fastlane/test_output
 *.xcodeproj/project.xcworkspace/xcuserdata
 *.xcodeproj/xcuserdata
 *.xcworkspace/xcuserdata
+*.xcodeproj/xcshareddata/xcschemes/Project-Demo.xcscheme
 
 # Archived builds
 *.xcarchive

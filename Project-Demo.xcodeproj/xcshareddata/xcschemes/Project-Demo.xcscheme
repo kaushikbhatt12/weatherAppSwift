@@ -80,11 +80,6 @@
             value = "5c6f48d9537613899a087f48958daddc"
             isEnabled = "YES">
          </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "baseURL"
-            value = "https://api.openweathermap.org"
-            isEnabled = "YES">
-         </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction

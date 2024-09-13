@@ -37,7 +37,13 @@ import Foundation
 struct ApiConstants {
     static let GET = "GET"
     static let API_KEY = ProcessInfo.processInfo.environment["apiKey"]!
-    static let BASE_URL = ProcessInfo.processInfo.environment["baseURL"]!
+    static var BASE_URL: String {
+        if let urlsDict = Bundle.main.object(forInfoDictionaryKey: "URLs") as? [String: Any],
+           let baseURL = urlsDict["baseURL"] as? String {
+            return baseURL
+        }
+        return ""
+    }
     static let getCoordinatesApiEndPoint = "%@/geo/1.0/direct?q=%@&limit=1&appid=%@"
     static let getWeatherForCoordinatesApiEndPoint = "%@/data/2.5/weather?lat=%@&lon=%@&appid=%@"
     static let fetchImageEndPoint = "%@/img/w/%@.png"
