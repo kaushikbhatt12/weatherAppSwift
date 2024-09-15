@@ -22,11 +22,11 @@ import Foundation
         
                     if let weatherData = weatherDataModel {
                         let weatherCardDataArray = [
-                            WeatherCardData(type: AppConstants.TEMPERATURE, value: String(format: " %.1f°C", weatherData.temperature - 273.15), image: URL(string: APIManager.getIconEndPoint(imageParameter: weatherData.weatherIcon)), description: weatherData.weatherDescription),
-                            WeatherCardData(type: AppConstants.HUMIDITY, value: "\(AppConstants.HUMIDITY) \n \(weatherData.humidity)%", image: nil, description: nil),
-                            WeatherCardData(type: AppConstants.WIND, value: "\(AppConstants.WIND_SPEED) \n \(weatherData.windspeed) m/s", image: nil, description: nil),
-                            WeatherCardData(type: AppConstants.SUNRISE, value: "\(AppConstants.SUNRISE) \n \(formatTime(from: weatherData.sunrise))", image: nil, description: nil),
-                            WeatherCardData(type: AppConstants.SUNSET, value: "\(AppConstants.SUNSET) \n \(formatTime(from: weatherData.sunset))", image: nil, description: nil)
+                            WeatherCardData(type: CELL_LABEL.TEMPERATURE, value: String(format: " %.1f°C", weatherData.temperature - 273.15), image: URL(string: APIManager.getIconEndPoint(imageParameter: weatherData.weatherIcon)), description: weatherData.weatherDescription),
+                            WeatherCardData(type: CELL_LABEL.HUMIDITY, value: "\(CELL_LABEL_TEXT.HUMIDITY) \n \(weatherData.humidity)%", image: nil, description: nil),
+                            WeatherCardData(type: CELL_LABEL.WIND, value: "\(CELL_LABEL_TEXT.WIND) \n \(weatherData.windspeed) m/s", image: nil, description: nil),
+                            WeatherCardData(type: CELL_LABEL.SUNRISE, value: "\(CELL_LABEL_TEXT.SUNRISE) \n \(formatTime(from: weatherData.sunrise))", image: nil, description: nil),
+                            WeatherCardData(type: CELL_LABEL.SUNSET, value: "\(CELL_LABEL_TEXT.SUNSET) \n \(formatTime(from: weatherData.sunset))", image: nil, description: nil)
                         ]
                         self.view?.weatherDataFetched(weatherCardDataArray)
                     } else {

@@ -9,8 +9,6 @@ import UIKit
 
 class SunriseCollectionViewCell: UICollectionViewCell {
     
-
-    
     @IBOutlet weak var sunriseLabel: UILabel!
     
     override func awakeFromNib() {

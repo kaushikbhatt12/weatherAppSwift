@@ -22,16 +22,25 @@ import Foundation
     @objc static let CITY_ENTITY = "City"
     @objc static let CITY_ENTITY_NAME_ATTRIBUTE = "name"
     @objc static let CITY_SEARCH_PREDICATE = "name == [c] %@"
-    @objc static let TEMPERATURE = "Temperature"
-    @objc static let HUMIDITY = "Humidity"
-    @objc static let WIND = "Wind"
-    @objc static let WIND_SPEED = "Wind Speed"
-    @objc static let SUNSET = "Sunset"
-    @objc static let SUNRISE = "Sunrise"
     @objc static let TIME_CONSTANT: Double = 14400
     @objc static let SHOW_WEATHER = "showWeather"
     @objc static let CELL = "Cell"
     @objc static let CITY_NOT_FOUND = "CityNotFound"
+}
+
+@objc class CELL_LABEL: NSObject {
+    @objc static let TEMPERATURE = "Temperature"
+    @objc static let HUMIDITY = "Humidity"
+    @objc static let WIND = "Wind"
+    @objc static let SUNSET = "Sunset"
+    @objc static let SUNRISE = "Sunrise"
+}
+
+@objc class CELL_LABEL_TEXT: NSObject {
+    @objc static let HUMIDITY = "Humidity"
+    @objc static let WIND = "Wind"
+    @objc static let SUNSET = "Sunset"
+    @objc static let SUNRISE = "Sunrise"
 }
 
 struct ApiConstants {
