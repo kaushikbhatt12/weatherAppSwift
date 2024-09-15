@@ -78,3 +78,11 @@ struct ApiConstants {
     @objc static let MINIMUM_LINE_SPACING : CGFloat = 10
     @objc static let MINIMUM_INTER_ITEM_SPACING : CGFloat = 10
 }
+
+@objc class IMAGE_CONSTANTS: NSObject {
+    @objc static let HUMIDITY = "humidity"
+    @objc static let SUNRISE = "sunrise"
+    @objc static let SUNSET = "sunset"
+    @objc static let WIND = "wind"
+    @objc static let WEATHER_INFO = "weatherInfo"
+}

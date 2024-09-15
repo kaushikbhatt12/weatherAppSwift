@@ -135,6 +135,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="backgroundImageView" destination="AAc-bA-x4s" id="ApQ-FI-xIg"/>
                                     <outlet property="temperatureLabel" destination="tuM-SV-h18" id="V7b-0k-ixv"/>
                                     <outlet property="weatherDescriptionLabel" destination="b2w-3N-YqY" id="r4n-Z8-tzt"/>
                                     <outlet property="weatherIcon" destination="O6t-Ml-oEv" id="bw2-3c-N56"/>
@@ -167,6 +168,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="backgroundImageView" destination="nkZ-dL-LVy" id="XrU-Vj-u4j"/>
                                     <outlet property="humidityLabel" destination="wzE-Pq-M6O" id="yLG-a3-kgH"/>
                                 </connections>
                             </collectionViewCell>
@@ -197,6 +199,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="backgroundImageView" destination="XDc-0n-10z" id="iQS-a7-vZ6"/>
                                     <outlet property="windLabel" destination="lPe-Dp-kgE" id="1ar-zm-wTV"/>
                                 </connections>
                             </collectionViewCell>
@@ -227,6 +230,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="backgroundImageView" destination="ZFr-dJ-1Ng" id="BYE-1l-ftk"/>
                                     <outlet property="sunriseLabel" destination="ckq-sZ-EJ9" id="IGF-n5-QKC"/>
                                 </connections>
                             </collectionViewCell>
@@ -257,6 +261,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="backgroundImageView" destination="B3a-kQ-YaC" id="JjI-Vn-xkZ"/>
                                     <outlet property="sunsetLabel" destination="yqw-rJ-C4j" id="9Mt-NS-VDV"/>
                                 </connections>
                             </collectionViewCell>
