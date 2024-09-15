@@ -41,7 +41,7 @@
     
     NSString *title = CELL_LABEL_TEXT.GET_WEATHER;
     NSDictionary *attributes = @{
-        NSFontAttributeName: [UIFont fontWithName:@"Noteworthy-Bold" size:20],
+        NSFontAttributeName: [UIFont fontWithName:AppConstants.FONT_STYLE size:AppConstants.FONT_SIZE],
     };
     NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attributes];
     [self.weatherButton setAttributedTitle:attributedTitle forState:UIControlStateNormal];
