@@ -1,0 +1,11 @@
+"Temperature" = "Temperatur";
+"Humidity" = "Luftfeuchtigkeit";
+"Wind" = "Wind";
+"Sunrise" = "Sonnenaufgang";
+"Sunset" = "Sonnenuntergang";
+"City Not Found" = "Stadt nicht gefunden";
+"The city you searched for was not found." = "Die Stadt, nach der Sie gesucht haben, wurde nicht gefunden.";
+"Failed to fetch weather data." = "Wetterdaten konnten nicht abgerufen werden.";
+"Error" = "Fehler";
+"OK" = "OK";
+"Get Weather" = "Wetter holen";

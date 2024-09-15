@@ -38,18 +38,22 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.getWeatherButton.enabled = YES;
+    
+    NSString *title = CELL_LABEL_TEXT.GET_WEATHER;
+    NSDictionary *attributes = @{
+        NSFontAttributeName: [UIFont fontWithName:@"Noteworthy-Bold" size:20],
+    };
+    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attributes];
+    [self.weatherButton setAttributedTitle:attributedTitle forState:UIControlStateNormal];
 }
 
 - (IBAction)getWeather:(id)sender {
-    
-    if (!self.getWeatherButton.enabled) {
-        return;
-    }
-    
-    self.getWeatherButton.enabled = false;
-    
     NSString *cityName = self.searchBar.text;
     if (cityName.length > 0) {
+        if (!self.getWeatherButton.enabled) {
+            return;
+        }
+        self.getWeatherButton.enabled = false;
         // Delegate the task to the model
         [self.weatherModel fetchCityDataWithName:cityName];
     } else {
@@ -77,8 +81,8 @@
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:Messages.OK
-                                                         style:UIAlertActionStyleDefault
-                                                       handler:nil];
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
     [alertController addAction:okAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }

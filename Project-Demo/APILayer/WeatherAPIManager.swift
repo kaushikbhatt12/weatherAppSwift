@@ -17,8 +17,11 @@ class APIManager {
     }
 
     static func getWeatherAPIEndpoint(latitude: Double, longitude: Double) -> String {
-        let apiUrlStr = String(format: ApiConstants.getWeatherForCoordinatesApiEndPoint,ApiConstants.BASE_URL, String(latitude), String(longitude), API_KEY )
-        return apiUrlStr
+        if let current_language = getCurrentLanguage() {
+            let apiUrlStr = String(format: ApiConstants.getWeatherForCoordinatesApiEndPoint,ApiConstants.BASE_URL, String(latitude), String(longitude),current_language, API_KEY )
+            return apiUrlStr
+        }
+        return ""
     }
     
     static func getIconEndPoint(imageParameter : String) -> String {

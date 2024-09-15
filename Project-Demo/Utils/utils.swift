@@ -14,3 +14,7 @@ func formatTime(from timestampValue: Int32) -> String {
     dateFormatter.dateFormat = "hh:mm a"
     return dateFormatter.string(from: date)
 }
+
+func getCurrentLanguage() -> String? {
+   return Bundle.main.preferredLocalizations.first
+}

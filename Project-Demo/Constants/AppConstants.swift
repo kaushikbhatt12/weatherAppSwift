@@ -37,10 +37,11 @@ import Foundation
 }
 
 @objc class CELL_LABEL_TEXT: NSObject {
-    @objc static let HUMIDITY = "Humidity"
-    @objc static let WIND = "Wind"
-    @objc static let SUNSET = "Sunset"
-    @objc static let SUNRISE = "Sunrise"
+    @objc static let HUMIDITY = NSLocalizedString("Humidity",comment: "")
+    @objc static let WIND = NSLocalizedString("Wind",comment: "")
+    @objc static let SUNSET = NSLocalizedString("Sunset",comment: "")
+    @objc static let SUNRISE = NSLocalizedString("Sunrise",comment: "")
+    @objc static let GET_WEATHER = NSLocalizedString("Get Weather",comment: "")
 }
 
 struct ApiConstants {
@@ -54,17 +55,17 @@ struct ApiConstants {
         return ""
     }
     static let getCoordinatesApiEndPoint = "%@/geo/1.0/direct?q=%@&limit=1&appid=%@"
-    static let getWeatherForCoordinatesApiEndPoint = "%@/data/2.5/weather?lat=%@&lon=%@&appid=%@"
+    static let getWeatherForCoordinatesApiEndPoint = "%@/data/2.5/weather?lat=%@&lon=%@&lang=%@&appid=%@"
     static let fetchImageEndPoint = "%@/img/w/%@.png"
 }
 
 @objc class Messages : NSObject {
-    @objc static let CITY_NOT_FOUND = "City Not Found"
-    @objc static let CITY_NOT_FOUND_MESSAGE = "The city you searched for was not found."
-    @objc static let WEATHER_FETCH_FAILED = "Failed to fetch weather data."
-    @objc static let ERROR = "Error"
-    @objc static let OK = "OK"
-    @objc static let WEATHER_DATA_ERROR = "WeatherDataError"
+    @objc static let CITY_NOT_FOUND = NSLocalizedString("City Not Found",comment: "")
+    @objc static let CITY_NOT_FOUND_MESSAGE = NSLocalizedString("The city you searched for was not found.",comment: "")
+    @objc static let WEATHER_FETCH_FAILED = NSLocalizedString("Failed to fetch weather data.",comment: "")
+    @objc static let ERROR = NSLocalizedString("Error",comment: "")
+    @objc static let OK = NSLocalizedString("OK",comment: "")
+    @objc static let WEATHER_DATA_ERROR = NSLocalizedString("WeatherDataError",comment: "")
 }
 
 @objc class LAYOUT_CONSTANTS : NSObject {
