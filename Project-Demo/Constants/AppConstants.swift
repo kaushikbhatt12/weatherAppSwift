@@ -68,6 +68,7 @@ struct ApiConstants {
     @objc static let ERROR = NSLocalizedString("Error",comment: "")
     @objc static let OK = NSLocalizedString("OK",comment: "")
     @objc static let WEATHER_DATA_ERROR = NSLocalizedString("WeatherDataError",comment: "")
+    @objc static let NO_CITY_ENTERED = NSLocalizedString("Please enter a city name",comment: "")
 }
 
 @objc class LAYOUT_CONSTANTS : NSObject {

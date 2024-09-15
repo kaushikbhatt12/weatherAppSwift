@@ -58,6 +58,7 @@
         [self.weatherModel fetchCityDataWithName:cityName];
     } else {
         NSLog(@"Please enter a city name.");
+        [self showAlertWithTitle:Messages.ERROR message:Messages.NO_CITY_ENTERED];
     }
 }
 
