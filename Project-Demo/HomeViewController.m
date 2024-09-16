@@ -50,7 +50,6 @@
         // Delegate the task to the model
         [self.weatherModel fetchCityDataWithName:cityName];
     } else {
-        NSLog(@"Please enter a city name.");
         [self showAlertWithTitle:Messages.ERROR message:Messages.NO_CITY_ENTERED];
     }
 }
@@ -83,7 +82,6 @@
 
 - (void)didFetchCityData:(City * _Nullable)city {
     if (city) {
-        NSLog(@"City found: %@", city.name);
         self.selectedCityName = city.name;
         self.longitude = @(city.longitude);
         self.latitude = @(city.latitude);
@@ -92,7 +90,6 @@
 }
 
 - (void)didFailWithError:(NSError * _Nonnull)error {
-    NSLog(@"Error: %@", error.localizedDescription);
     self.getWeatherButton.enabled = YES;
     [self showAlertWithTitle:Messages.ERROR message:error.localizedDescription];
 }
