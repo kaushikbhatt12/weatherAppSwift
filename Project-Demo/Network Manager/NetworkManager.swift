@@ -9,7 +9,6 @@ class NetworkManager {
         let apiUrlStr = APIManager.getCitySearchAPIEndpoint(cityName: cityName)
         
         guard let url = URL(string: apiUrlStr) else {
-            print("Invalid URL")
             completion(nil)
             return
         }
@@ -21,19 +20,16 @@ class NetworkManager {
         
         let task = session.dataTask(with: request) { data, response, error in
             if let error = error {
-                print("Error: \(error.localizedDescription)")
                 completion(nil)
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                print("Invalid response or status code")
                 completion(nil)
                 return
             }
             
             guard let data = data else {
-                print("No data received")
                 completion(nil)
                 return
             }
@@ -48,7 +44,6 @@ class NetworkManager {
                     completion(nil)
                 }
             } catch {
-                print("Parsing error: \(error.localizedDescription)")
                 completion(nil)
             }
         }
@@ -61,7 +56,6 @@ class NetworkManager {
         let apiUrlStr = APIManager.getWeatherAPIEndpoint(latitude: latitude, longitude: longitude)
         
         guard let url = URL(string: apiUrlStr) else {
-            print("Invalid URL")
             completion(nil)
             return
         }
@@ -69,13 +63,11 @@ class NetworkManager {
         let session = URLSession.shared
         let task = session.dataTask(with: url) { data, response, error in
             if let error = error {
-                print("Error: \(error.localizedDescription)")
                 completion(nil)
                 return
             }
             
             guard let data = data else {
-                print("No data received")
                 completion(nil)
                 return
             }
@@ -85,7 +77,6 @@ class NetworkManager {
                 let weatherResponse = try decoder.decode(WeatherResponse.self, from: data)
                 completion(weatherResponse)
             } catch {
-                print("Error decoding weather data: \(error)")
                 completion(nil)
             }
         }
