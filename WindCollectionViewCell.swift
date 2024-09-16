@@ -1,10 +1,3 @@
-//
-//  WindCollectionViewCell.swift
-//  Project-Demo
-//
-//  Created by kaushik.bha on 06/09/24.
-//
-
 import UIKit
 
 class WindCollectionViewCell: UICollectionViewCell {

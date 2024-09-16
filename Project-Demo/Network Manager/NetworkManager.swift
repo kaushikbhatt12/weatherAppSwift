@@ -1,10 +1,3 @@
-//
-//  NetworkManager.swift
-//  Project-Demo
-//
-//  Created by kaushik.bha on 05/09/24.
-//
-
 import Foundation
 
 class NetworkManager {

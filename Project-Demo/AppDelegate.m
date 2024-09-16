@@ -1,10 +1,3 @@
-//
-//  AppDelegate.m
-//  Project-Demo
-//
-//  Created by kaushik.bha on 04/09/24.
-//
-
 #import "AppDelegate.h"
 
 @interface AppDelegate ()

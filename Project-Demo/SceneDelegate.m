@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.m
-//  Project-Demo
-//
-//  Created by kaushik.bha on 04/09/24.
-//
-
 #import "SceneDelegate.h"
 #import "AppDelegate.h"
 

@@ -1,10 +1,3 @@
-//
-//  WeatherModel.m
-//  Project-Demo
-//
-//  Created by kaushik.bha on 11/09/24.
-//
-
 #import "WeatherModel.h"
 
 @implementation WeatherModel

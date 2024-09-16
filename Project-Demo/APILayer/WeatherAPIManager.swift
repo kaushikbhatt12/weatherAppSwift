@@ -1,10 +1,3 @@
-//
-//  WeatherAPIManager.swift
-//  Project-Demo
-//
-//  Created by kaushik.bha on 09/09/24.
-//
-
 import Foundation
 
 class APIManager {

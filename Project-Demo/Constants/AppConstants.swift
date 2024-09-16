@@ -1,10 +1,3 @@
-//
-//  AppConstants.swift
-//  Project-Demo
-//
-//  Created by kaushik.bha on 10/09/24.
-//
-
 import Foundation
 
 @objc class AppConstants: NSObject {

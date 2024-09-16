@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  Project-Demo
-//
-//  Created by kaushik.bha on 11/09/24.
-//
-
 import Foundation
 
 func formatTime(from timestampValue: Int32) -> String {

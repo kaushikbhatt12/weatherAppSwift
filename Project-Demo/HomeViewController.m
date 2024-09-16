@@ -1,10 +1,3 @@
-//
-//  ViewController.m
-//  Project-Demo
-//
-//  Created by kaushik.bha on 04/09/24.
-//
-
 #import "HomeViewController.h"
 #import "AppDelegate.h"
 #import "WeatherModel.h"
