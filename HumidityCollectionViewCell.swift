@@ -37,12 +37,11 @@ class HumidityCollectionViewCell: UICollectionViewCell {
         // Add humidity label to the view
         contentView.addSubview(humidityLabel)
         
-        //Pin the humidity label to the center of the cell
+        // Pin the humidity label to the center of the cell
         NSLayoutConstraint.activate([
             humidityLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             humidityLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
-
     }
     
     func configure(_ weatherData : WeatherCardData) {

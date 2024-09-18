@@ -20,7 +20,7 @@ import Foundation
     @objc static let CELL = "Cell"
     @objc static let CITY_NOT_FOUND = "CityNotFound"
     @objc static let FONT_STYLE = "Noteworthy-Bold"
-    @objc static let FONT_SIZE : CGFloat = 20
+    @objc static let FONT_SIZE : CGFloat = 22
 }
 
 @objc class CELL_LABEL: NSObject {
