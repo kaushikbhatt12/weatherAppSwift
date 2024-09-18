@@ -63,7 +63,6 @@ class NetworkManager {
         let session = URLSession.shared
         let task = session.dataTask(with: url) { data, response, error in
             if error != nil {
-                print(error)
                 completion(nil)
                 return
             }
