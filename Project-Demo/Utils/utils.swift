@@ -11,3 +11,12 @@ func formatTime(from timestampValue: Int32) -> String {
 func getCurrentLanguage() -> String? {
    return Bundle.main.preferredLocalizations.first
 }
+
+struct Logger {
+    static func debugLog(_ message: String) {
+        #if DEBUG
+        print("DEBUG: \(message)")
+        #endif
+    }
+}
+
