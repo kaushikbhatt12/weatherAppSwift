@@ -5,14 +5,22 @@ class SunsetCollectionViewCell: UICollectionViewCell {
     let backgroundImageView = UIImageView()
     let sunsetLabel = UILabel()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setUpLayout()
     }
     
     private func setUpLayout() {
         // Configure the cell layout
         layer.cornerRadius = LAYOUT_CONSTANTS.CORNER_RADIUS
+        clipsToBounds = true
+
+        // Set up background image
         backgroundImageView.image = UIImage(named: IMAGE_CONSTANTS.SUNSET)
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.clipsToBounds = true
@@ -44,6 +52,7 @@ class SunsetCollectionViewCell: UICollectionViewCell {
         ])
     }
     
+    // Configure the cell with data
     func configure(_ weatherData: WeatherCardData) {
         sunsetLabel.text = weatherData.value
     }

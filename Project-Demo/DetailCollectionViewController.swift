@@ -15,21 +15,38 @@ private let reuseIdentifier = AppConstants.CELL
     
     var weatherCardDataArray: [WeatherCardData] = []
     
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
-    
+    var spinner: UIActivityIndicatorView!
     @objc var viewModel: DetailCollectionViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = cityName
+        
+        // Initialize spinner
+        spinner = UIActivityIndicatorView(style: .large)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(spinner)
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
         spinner.startAnimating()
         
+        // Register the custom cells
+        collectionView.register(TemperatureCollectionViewCell.self, forCellWithReuseIdentifier: CELL_LABEL.TEMPERATURE)
+        collectionView.register(HumidityCollectionViewCell.self, forCellWithReuseIdentifier: CELL_LABEL.HUMIDITY)
+        collectionView.register(WindCollectionViewCell.self, forCellWithReuseIdentifier: CELL_LABEL.WIND)
+        collectionView.register(SunriseCollectionViewCell.self, forCellWithReuseIdentifier: CELL_LABEL.SUNRISE)
+        collectionView.register(SunsetCollectionViewCell.self, forCellWithReuseIdentifier: CELL_LABEL.SUNSET)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        // Fetch weather data
         if let cityName = cityName {
             self.viewModel?.fetchWeatherData(cityName: cityName, latitude: lat as! Double, longitude: lon as! Double)
         }
-        
-        self.navigationItem.title = cityName
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {

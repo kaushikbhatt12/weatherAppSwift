@@ -5,14 +5,21 @@ class HumidityCollectionViewCell: UICollectionViewCell {
     let backgroundImageView = UIImageView()
     let humidityLabel = UILabel()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setUpLayout()
     }
     
     private func setUpLayout() {
         // Configure the cell layout
         layer.cornerRadius = LAYOUT_CONSTANTS.CORNER_RADIUS
+        clipsToBounds = true
+        
         backgroundImageView.image = UIImage(named: IMAGE_CONSTANTS.HUMIDITY)
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.clipsToBounds = true

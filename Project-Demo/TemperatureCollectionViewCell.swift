@@ -10,24 +10,29 @@ class TemperatureCollectionViewCell: UICollectionViewCell {
     let temperatureLabel = UILabel()
     let weatherDescriptionLabel = UILabel()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpLayout()
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setUpLayout()
     }
     
     private func setUpLayout() {
         // Configure the cell layout
         layer.cornerRadius = LAYOUT_CONSTANTS.CORNER_RADIUS
+        clipsToBounds = true
+        
+        // Set up background image
         backgroundImageView.image = UIImage(named: IMAGE_CONSTANTS.WEATHER_INFO)
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.clipsToBounds = true
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(backgroundImageView)
         
+        // Pin the image view to the edges of the cell
         NSLayoutConstraint.activate([
             backgroundImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             backgroundImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
