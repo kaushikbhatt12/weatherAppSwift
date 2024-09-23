@@ -3,10 +3,8 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -78,203 +76,13 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="ScW-OP-gVk">
-                            <rect key="frame" x="0.0" y="-94" width="375" height="812"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="color" name="AccentColor"/>
-                        </activityIndicatorView>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Temperature" id="2R7-vY-FW9" customClass="TemperatureCollectionViewCell" customModule="Project_Demo" customModuleProvider="target">
-                                <rect key="frame" x="37.666666666666664" y="0.0" width="300" height="150"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6el-Qh-ZUz">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weatherImage" translatesAutoresizingMaskIntoConstraints="NO" id="AAc-bA-x4s">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
-                                        </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ihe-Dg-FN0">
-                                            <rect key="frame" x="64.666666666666671" y="15.666666666666664" width="170.66666666666663" height="118.66666666666669"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iaW-Ub-LYW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="170.66666666666666" height="59.333333333333336"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O6t-Ml-oEv">
-                                                            <rect key="frame" x="0.0" y="0.0" width="85.333333333333329" height="59.333333333333336"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuM-SV-h18">
-                                                            <rect key="frame" x="85.333333333333343" y="0.0" width="85.333333333333343" height="59.333333333333336"/>
-                                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="37"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nkh-vo-G2A">
-                                                    <rect key="frame" x="0.0" y="59.333333333333329" width="170.66666666666666" height="59.333333333333329"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2w-3N-YqY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="170.66666666666666" height="59.333333333333336"/>
-                                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="28"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="AAc-bA-x4s" secondAttribute="bottom" id="CTd-GZ-Pdu"/>
-                                        <constraint firstItem="Ihe-Dg-FN0" firstAttribute="centerY" secondItem="6el-Qh-ZUz" secondAttribute="centerY" id="MH9-we-dcu"/>
-                                        <constraint firstItem="AAc-bA-x4s" firstAttribute="leading" secondItem="6el-Qh-ZUz" secondAttribute="leading" id="ZaG-Df-oHO"/>
-                                        <constraint firstItem="AAc-bA-x4s" firstAttribute="top" secondItem="6el-Qh-ZUz" secondAttribute="top" id="kOf-8C-fLW"/>
-                                        <constraint firstAttribute="trailing" secondItem="AAc-bA-x4s" secondAttribute="trailing" id="pLk-jW-nA0"/>
-                                        <constraint firstItem="Ihe-Dg-FN0" firstAttribute="centerX" secondItem="6el-Qh-ZUz" secondAttribute="centerX" id="zwa-MS-sTD"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <connections>
-                                    <outlet property="backgroundImageView" destination="AAc-bA-x4s" id="ApQ-FI-xIg"/>
-                                    <outlet property="temperatureLabel" destination="tuM-SV-h18" id="V7b-0k-ixv"/>
-                                    <outlet property="weatherDescriptionLabel" destination="b2w-3N-YqY" id="r4n-Z8-tzt"/>
-                                    <outlet property="weatherIcon" destination="O6t-Ml-oEv" id="bw2-3c-N56"/>
-                                </connections>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Humidity" id="SEb-jV-Jcq" customClass="HumidityCollectionViewCell" customModule="Project_Demo" customModuleProvider="target">
-                                <rect key="frame" x="37.666666666666664" y="160" width="300" height="150"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Efr-ft-gn6">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humidity2" translatesAutoresizingMaskIntoConstraints="NO" id="nkZ-dL-LVy">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzE-Pq-M6O">
-                                            <rect key="frame" x="124.66666666666667" y="57.333333333333329" width="50.666666666666671" height="35.333333333333329"/>
-                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="wzE-Pq-M6O" firstAttribute="centerY" secondItem="nkZ-dL-LVy" secondAttribute="centerY" id="3XM-HT-5Au"/>
-                                        <constraint firstAttribute="trailing" secondItem="nkZ-dL-LVy" secondAttribute="trailing" id="7YB-hg-gnl"/>
-                                        <constraint firstItem="nkZ-dL-LVy" firstAttribute="top" secondItem="Efr-ft-gn6" secondAttribute="top" id="D1m-y7-7ru"/>
-                                        <constraint firstItem="wzE-Pq-M6O" firstAttribute="centerX" secondItem="nkZ-dL-LVy" secondAttribute="centerX" id="MSD-Yq-qgS"/>
-                                        <constraint firstAttribute="bottom" secondItem="nkZ-dL-LVy" secondAttribute="bottom" id="Mk5-Yv-D37"/>
-                                        <constraint firstItem="nkZ-dL-LVy" firstAttribute="leading" secondItem="Efr-ft-gn6" secondAttribute="leading" id="zn8-dd-Njr"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <connections>
-                                    <outlet property="backgroundImageView" destination="nkZ-dL-LVy" id="XrU-Vj-u4j"/>
-                                    <outlet property="humidityLabel" destination="wzE-Pq-M6O" id="yLG-a3-kgH"/>
-                                </connections>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Wind" id="nMF-hO-CXs" customClass="WindCollectionViewCell" customModule="Project_Demo" customModuleProvider="target">
-                                <rect key="frame" x="37.666666666666664" y="320" width="300" height="150"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CLk-eS-lgg">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wind" translatesAutoresizingMaskIntoConstraints="NO" id="XDc-0n-10z">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPe-Dp-kgE">
-                                            <rect key="frame" x="124.66666666666667" y="57.333333333333329" width="50.666666666666671" height="35.333333333333329"/>
-                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="lPe-Dp-kgE" firstAttribute="centerX" secondItem="XDc-0n-10z" secondAttribute="centerX" id="4IM-el-qtF"/>
-                                        <constraint firstAttribute="trailing" secondItem="XDc-0n-10z" secondAttribute="trailing" id="NLC-Sv-0Ev"/>
-                                        <constraint firstItem="XDc-0n-10z" firstAttribute="top" secondItem="CLk-eS-lgg" secondAttribute="top" id="aQf-yj-hKd"/>
-                                        <constraint firstItem="lPe-Dp-kgE" firstAttribute="centerY" secondItem="XDc-0n-10z" secondAttribute="centerY" id="ryd-Ta-HJt"/>
-                                        <constraint firstAttribute="bottom" secondItem="XDc-0n-10z" secondAttribute="bottom" id="s4v-LG-SL5"/>
-                                        <constraint firstItem="XDc-0n-10z" firstAttribute="leading" secondItem="CLk-eS-lgg" secondAttribute="leading" id="yZj-CD-PPZ"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <connections>
-                                    <outlet property="backgroundImageView" destination="XDc-0n-10z" id="iQS-a7-vZ6"/>
-                                    <outlet property="windLabel" destination="lPe-Dp-kgE" id="1ar-zm-wTV"/>
-                                </connections>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Sunrise" id="Kyq-V1-E5r" customClass="SunriseCollectionViewCell" customModule="Project_Demo" customModuleProvider="target">
-                                <rect key="frame" x="37.666666666666664" y="480" width="300" height="150"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5zv-sR-w57">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunrise" translatesAutoresizingMaskIntoConstraints="NO" id="ZFr-dJ-1Ng">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckq-sZ-EJ9">
-                                            <rect key="frame" x="124.66666666666667" y="57.333333333333329" width="50.666666666666671" height="35.333333333333329"/>
-                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="ZFr-dJ-1Ng" secondAttribute="bottom" id="44M-an-X1O"/>
-                                        <constraint firstItem="ZFr-dJ-1Ng" firstAttribute="leading" secondItem="5zv-sR-w57" secondAttribute="leading" id="Ez5-A3-hQJ"/>
-                                        <constraint firstItem="ZFr-dJ-1Ng" firstAttribute="top" secondItem="5zv-sR-w57" secondAttribute="top" id="eQm-w0-2Yx"/>
-                                        <constraint firstItem="ckq-sZ-EJ9" firstAttribute="centerX" secondItem="ZFr-dJ-1Ng" secondAttribute="centerX" id="fjl-eK-4DF"/>
-                                        <constraint firstItem="ckq-sZ-EJ9" firstAttribute="centerY" secondItem="ZFr-dJ-1Ng" secondAttribute="centerY" id="gSL-bf-d1K"/>
-                                        <constraint firstAttribute="trailing" secondItem="ZFr-dJ-1Ng" secondAttribute="trailing" id="vdA-Is-94B"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <connections>
-                                    <outlet property="backgroundImageView" destination="ZFr-dJ-1Ng" id="BYE-1l-ftk"/>
-                                    <outlet property="sunriseLabel" destination="ckq-sZ-EJ9" id="IGF-n5-QKC"/>
-                                </connections>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Sunset" id="R0l-3d-CND" customClass="SunsetCollectionViewCell" customModule="Project_Demo" customModuleProvider="target">
-                                <rect key="frame" x="37.666666666666664" y="640" width="300" height="150"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Z0J-ws-jaO">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunset" translatesAutoresizingMaskIntoConstraints="NO" id="B3a-kQ-YaC">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqw-rJ-C4j">
-                                            <rect key="frame" x="124.66666666666667" y="57.333333333333329" width="50.666666666666671" height="35.333333333333329"/>
-                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="B3a-kQ-YaC" secondAttribute="bottom" id="23J-CC-zDB"/>
-                                        <constraint firstItem="yqw-rJ-C4j" firstAttribute="centerX" secondItem="B3a-kQ-YaC" secondAttribute="centerX" id="5Ec-tI-0rg"/>
-                                        <constraint firstAttribute="trailing" secondItem="B3a-kQ-YaC" secondAttribute="trailing" id="Gpp-O2-jjV"/>
-                                        <constraint firstItem="B3a-kQ-YaC" firstAttribute="leading" secondItem="Z0J-ws-jaO" secondAttribute="leading" id="VCP-Tf-X3j"/>
-                                        <constraint firstItem="B3a-kQ-YaC" firstAttribute="top" secondItem="Z0J-ws-jaO" secondAttribute="top" id="XZD-8z-yBy"/>
-                                        <constraint firstItem="yqw-rJ-C4j" firstAttribute="centerY" secondItem="B3a-kQ-YaC" secondAttribute="centerY" id="tl2-UC-lU5"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <connections>
-                                    <outlet property="backgroundImageView" destination="B3a-kQ-YaC" id="JjI-Vn-xkZ"/>
-                                    <outlet property="sunsetLabel" destination="yqw-rJ-C4j" id="9Mt-NS-VDV"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                         <connections>
                             <outlet property="dataSource" destination="Dde-3l-heH" id="v7n-u8-5HD"/>
                             <outlet property="delegate" destination="Dde-3l-heH" id="YDn-J7-Yy1"/>
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="S2P-Oo-PgP"/>
-                    <connections>
-                        <outlet property="spinner" destination="ScW-OP-gVk" id="sEX-43-XRB"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UQH-1X-mLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -302,14 +110,6 @@
     <color key="tintColor" systemColor="tintColor"/>
     <resources>
         <image name="background" width="385" height="626"/>
-        <image name="humidity2" width="3000" height="2000"/>
-        <image name="sunrise" width="299" height="169"/>
-        <image name="sunset" width="640" height="454"/>
-        <image name="weatherImage" width="1470" height="980"/>
-        <image name="wind" width="2216" height="1434"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

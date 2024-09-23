@@ -20,7 +20,7 @@ import Foundation
     @objc static let CELL = "Cell"
     @objc static let CITY_NOT_FOUND = "CityNotFound"
     @objc static let FONT_STYLE = "Noteworthy-Bold"
-    @objc static let FONT_SIZE = 20
+    @objc static let FONT_SIZE : CGFloat = 22
 }
 
 @objc class CELL_LABEL: NSObject {
@@ -70,6 +70,11 @@ struct ApiConstants {
     @objc static let CELL_INSETS : CGFloat = 10
     @objc static let MINIMUM_LINE_SPACING : CGFloat = 10
     @objc static let MINIMUM_INTER_ITEM_SPACING : CGFloat = 10
+    @objc static let WEATHER_ICON_WIDTH : CGFloat = 100
+    @objc static let WEATHER_ICON_HEIGHT : CGFloat = 100
+    @objc static let TEMPERATURE_LABEL_FONT_SIZE : CGFloat = 35
+    @objc static let WEATHER_DESCRIPTION_FONT_SIZE : CGFloat = 28
+    @objc static let NUMBER_OF_LINES = 2
 }
 
 @objc class IMAGE_CONSTANTS: NSObject {
