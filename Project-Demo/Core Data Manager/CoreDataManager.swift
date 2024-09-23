@@ -1,10 +1,3 @@
-//
-//  CoreDataManager.swift
-//  Project-Demo
-//
-//  Created by kaushik.bha on 09/09/24.
-//
-
 import CoreData
 
 @objc class CoreDataManager : NSObject {
