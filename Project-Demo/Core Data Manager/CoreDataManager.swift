@@ -19,7 +19,9 @@ import CoreData
                     // Save the weather data for the city with the timestamp
                     let weatherData = AppConstants.weatherData[index]
                     CoreDataManager.shared.saveWeatherData(for: savedCity.name!, weatherData: weatherData)
+                    #if DEBUG
                     print("City and weather data with timestamp saved for \(savedCity.name!)")
+                    #endif
                 }
             }
         }
@@ -32,7 +34,9 @@ import CoreData
             let cities = try context.fetch(fetchRequest)
             completion(cities.first)
         } catch {
+            #if DEBUG
             print("Failed to fetch city: \(error.localizedDescription)")
+            #endif
             completion(nil)
         }
     }
@@ -50,7 +54,9 @@ import CoreData
             try context.save()
             completion(city)
         } catch {
+            #if DEBUG
             print("Error saving city data to Core Data: \(error)")
+            #endif
             completion(nil)
         }
     }
@@ -77,7 +83,9 @@ import CoreData
             
             try context.save()
         } catch {
+            #if DEBUG
             print("Error saving weather data to Core Data: \(error)")
+            #endif
         }
     }
     
@@ -86,7 +94,9 @@ import CoreData
         container.loadPersistentStores { storeDescription, error in
             if let error = error as NSError? {
                 // handle error
+                #if DEBUG
                 print("Unresolved error \(error), \(error.userInfo)")
+                #endif
             }
         }
         return container
@@ -104,7 +114,9 @@ import CoreData
             } catch {
                 let nserror = error as NSError
                 // handle error
+                #if DEBUG
                 print("Unresolved error \(nserror), \(nserror.userInfo)")
+                #endif
             }
         }
     }
