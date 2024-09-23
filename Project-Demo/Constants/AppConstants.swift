@@ -63,6 +63,11 @@ struct ApiConstants {
     @objc static let OK = NSLocalizedString("OK",comment: "")
     @objc static let WEATHER_DATA_ERROR = NSLocalizedString("WeatherDataError",comment: "")
     @objc static let NO_CITY_ENTERED = NSLocalizedString("Please enter a city name",comment: "")
+    @objc static let UNRESOLVED_ERROR = "Unresolved error"
+    @objc static let ERROR_SAVING_WEATHER_DATA = "Error saving weather data to Core Data:"
+    @objc static let ERROR_SAVING_CITY_DATA = "Error saving city data to Core Data:"
+    @objc static let FAILED_FETCH = "Failed to fetch city:"
+    @objc static let SAVED_WEATHER_AND_CITY_DATA = "City and weather data with timestamp saved for"
 }
 
 @objc class LAYOUT_CONSTANTS : NSObject {

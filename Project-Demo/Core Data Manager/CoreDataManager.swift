@@ -12,7 +12,7 @@ import CoreData
                     // Save the weather data for the city with the timestamp
                     let weatherData = AppConstants.weatherData[index]
                     CoreDataManager.shared.saveWeatherData(for: savedCity.name!, weatherData: weatherData)
-                    Logger.debugLog("City and weather data with timestamp saved for \(savedCity.name!)")
+                    Logger.debugLog("\(Messages.SAVED_WEATHER_AND_CITY_DATA) \(savedCity.name!)")
                 }
             }
         }
@@ -25,7 +25,7 @@ import CoreData
             let cities = try context.fetch(fetchRequest)
             completion(cities.first)
         } catch {
-            Logger.debugLog("Failed to fetch city: \(error.localizedDescription)")
+            Logger.debugLog("\(Messages.FAILED_FETCH) \(error.localizedDescription)")
             completion(nil)
         }
     }
@@ -43,7 +43,7 @@ import CoreData
             try context.save()
             completion(city)
         } catch {
-            Logger.debugLog("Error saving city data to Core Data: \(error)")
+            Logger.debugLog("\(Messages.ERROR_SAVING_CITY_DATA) \(error)")
             completion(nil)
         }
     }
@@ -70,7 +70,7 @@ import CoreData
             
             try context.save()
         } catch {
-            Logger.debugLog("Error saving weather data to Core Data: \(error)")
+            Logger.debugLog("\(Messages.ERROR_SAVING_WEATHER_DATA) \(error)")
         }
     }
     
@@ -79,7 +79,7 @@ import CoreData
         container.loadPersistentStores { storeDescription, error in
             if let error = error as NSError? {
                 // handle error
-                Logger.debugLog("Unresolved error \(error), \(error.userInfo)")
+                Logger.debugLog("\(Messages.UNRESOLVED_ERROR) \(error), \(error.userInfo)")
             }
         }
         return container
@@ -97,7 +97,7 @@ import CoreData
             } catch {
                 let nserror = error as NSError
                 // handle error
-                Logger.debugLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                Logger.debugLog("\(Messages.UNRESOLVED_ERROR) \(nserror), \(nserror.userInfo)")
             }
         }
     }
