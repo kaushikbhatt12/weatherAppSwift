@@ -21,6 +21,7 @@ import Foundation
     @objc static let CITY_NOT_FOUND = "CityNotFound"
     @objc static let FONT_STYLE = "Noteworthy-Bold"
     @objc static let FONT_SIZE = 20
+    @objc static let TEMPERATURE_CONSTANT : CGFloat = 273.15
 }
 
 @objc class CELL_LABEL: NSObject {

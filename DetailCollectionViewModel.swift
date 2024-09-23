@@ -16,7 +16,7 @@ import Foundation
         
                     if let weatherData = weatherDataModel {
                         let weatherCardDataArray = [
-                            WeatherCardData(type: CELL_LABEL.TEMPERATURE, value: String(format: " %.1f°C", weatherData.temperature - 273.15), image: URL(string: APIManager.getIconEndPoint(imageParameter: weatherData.weatherIcon)), description: weatherData.weatherDescription),
+                            WeatherCardData(type: CELL_LABEL.TEMPERATURE, value: String(format: " %.1f°C", weatherData.temperature - AppConstants.TEMPERATURE_CONSTANT), image: URL(string: APIManager.getIconEndPoint(imageParameter: weatherData.weatherIcon)), description: weatherData.weatherDescription),
                             WeatherCardData(type: CELL_LABEL.HUMIDITY, value: "\(CELL_LABEL_TEXT.HUMIDITY) \n \(weatherData.humidity)%", image: nil, description: nil),
                             WeatherCardData(type: CELL_LABEL.WIND, value: "\(CELL_LABEL_TEXT.WIND) \n \(weatherData.windspeed) m/s", image: nil, description: nil),
                             WeatherCardData(type: CELL_LABEL.SUNRISE, value: "\(CELL_LABEL_TEXT.SUNRISE) \n \(formatTime(from: weatherData.sunrise))", image: nil, description: nil),
