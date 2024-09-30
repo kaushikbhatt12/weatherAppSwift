@@ -72,14 +72,22 @@ class LoginSignupViewController: UIViewController {
     }
 
     @objc private func loginTapped() {
+        let viewModel = LoginViewModel()
         let loginVC = LoginViewController()
         loginVC.modalPresentationStyle = .fullScreen
+        
+        loginVC.viewModel = viewModel;
+        viewModel.view = loginVC;
         present(loginVC, animated: true, completion: nil)
     }
 
     @objc private func signUpTapped() {
+        let viewModel = SignupViewModel()
         let signupVC = SignupViewController()
         signupVC.modalPresentationStyle = .fullScreen
+        
+        signupVC.viewModel = viewModel;
+        viewModel.view = signupVC
         present(signupVC, animated: true, completion: nil)
     }
 }

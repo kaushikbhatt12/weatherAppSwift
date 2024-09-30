@@ -1,10 +1,18 @@
 import UIKit
 
-class SignupViewController: UIViewController {
+protocol SignupViewControllerProtocol : AnyObject {
+    func invalidInput() -> Void
+    func failedWithError(_ error : Error) -> Void
+    func signUpSucceded() -> Void
+}
+
+class SignupViewController: UIViewController,SignupViewControllerProtocol {
 
     private var emailTextField: UITextField!
     private var passwordTextField: UITextField!
     private var signUpButton: UIButton!
+    
+    var viewModel: SignupViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,20 +58,7 @@ class SignupViewController: UIViewController {
     
     // Action for Sign Up Button
     @objc private func signUpButtonTapped(_ sender: UIButton) {
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        
-        if email.isEmpty || password.isEmpty {
-            showAlert(title: Messages.ERROR, message: Messages.ENTER_EMAIL_AND_PASSWORD)
-        } else {
-            FirebaseAuthManager.shared.signUp(email: email, password: password) { authResult, error in
-                if let error = error {
-                    self.showAlert(title: Messages.ERROR, message: error.localizedDescription)
-                } else {
-                    self.presentHomeViewController()
-                }
-            }
-        }
+        self.viewModel?.signup(email: emailTextField.text ?? "", password:passwordTextField.text ?? "")
     }
     
     // Present HomeViewController
@@ -85,6 +80,18 @@ class SignupViewController: UIViewController {
         let okAction = UIAlertAction(title: Messages.OK, style: .default, handler: nil)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func invalidInput() {
+        showAlert(title: Messages.ERROR, message: Messages.ENTER_EMAIL_AND_PASSWORD)
+    }
+    
+    func signUpSucceded() {
+        presentHomeViewController()
+    }
+    
+    func failedWithError(_ error: Error) {
+        showAlert(title: Messages.ERROR, message: error.localizedDescription)
     }
 }
 
