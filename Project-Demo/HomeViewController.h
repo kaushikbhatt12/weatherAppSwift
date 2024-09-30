@@ -1,6 +1,4 @@
 #import <UIKit/UIKit.h>
-#import "Project_Demo-Swift.h"
-#import "LoginSignupViewController.h"
 
 @interface HomeViewController : UIViewController
 

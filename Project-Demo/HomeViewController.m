@@ -60,8 +60,7 @@
             [self showAlertWithTitle:Messages.ERROR message:Messages.FAILED_LOG_OUT];
         } else {
             // Transition back to LoginSignUpViewController
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:AppConstants.STORY_BOARD_NAME bundle:nil];
-            LoginSignupViewController *loginSignupVC = [storyboard instantiateViewControllerWithIdentifier:AppConstants.LOGIN_SIGNUP_CONTROLLER];
+            LoginSignupViewController *loginSignupVC = [[LoginSignupViewController alloc] init];
             loginSignupVC.modalPresentationStyle = UIModalPresentationFullScreen;
             [self presentViewController:loginSignupVC animated:YES completion:nil];
         }

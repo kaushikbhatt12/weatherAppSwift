@@ -26,6 +26,8 @@ import Foundation
     @objc static let LOGIN_SIGNUP_CONTROLLER = "LoginSignupViewController"
     @objc static let HOME_NAVIGATION_VIEW_CONTROLLER = "HomeNavigationViewController"
     @objc static let BACK_ICON = "✖️"
+    @objc static let FONT_COPPER_PLATE = "Copperplate-Bold"
+    @objc static let LOGIN_SIGN_UP_BACKGROUND_IMAGE = "loginSignupBackground"
 }
 
 @objc class CELL_LABEL: NSObject {

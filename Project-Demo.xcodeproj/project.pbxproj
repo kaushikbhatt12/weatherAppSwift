@@ -33,11 +33,11 @@
 		A82E59622CA6B7F00050A9C7 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82E59612CA6B7F00050A9C7 /* FirebaseAuthManager.swift */; };
 		A82E59702CA6BCD00050A9C7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A82E596F2CA6BCD00050A9C7 /* FirebaseAuth */; };
 		A82E59722CA6C1C30050A9C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A82E59712CA6C1C30050A9C7 /* GoogleService-Info.plist */; };
-		A82E59752CA6C3780050A9C7 /* LoginSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82E59742CA6C3780050A9C7 /* LoginSignupViewController.m */; };
 		A83C0F5D2C8B338A0046D1D6 /* WindCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C0F5C2C8B338A0046D1D6 /* WindCollectionViewCell.swift */; };
 		A83C0F632C8CF1280046D1D6 /* SunriseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C0F622C8CF1280046D1D6 /* SunriseCollectionViewCell.swift */; };
-		A86D80CF2CA6D97400C5E4F3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86D80CE2CA6D97400C5E4F3 /* LoginViewController.m */; };
-		A86D80D22CA6D9D400C5E4F3 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86D80D12CA6D9D400C5E4F3 /* SignupViewController.m */; };
+		A86D80D92CAABE0F00C5E4F3 /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86D80D82CAABE0F00C5E4F3 /* LoginSignupViewController.swift */; };
+		A86D80DB2CAAC16800C5E4F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86D80DA2CAAC16800C5E4F3 /* LoginViewController.swift */; };
+		A86D80DD2CAAC22E00C5E4F3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86D80DC2CAAC22E00C5E4F3 /* SignUpViewController.swift */; };
 		A8B3C9622C971BC0001628B1 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A8B3C9612C971BC0001628B1 /* Localizable.xcstrings */; };
 		A8CE296E2C91389900AE814E /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CE296D2C91389900AE814E /* WeatherModel.m */; };
 		A8CE29712C917A7700AE814E /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CE29702C917A7700AE814E /* utils.swift */; };
@@ -102,14 +102,11 @@
 		A8243BE92C8DE11500842CE7 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		A82E59612CA6B7F00050A9C7 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		A82E59712CA6C1C30050A9C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A82E59732CA6C3780050A9C7 /* LoginSignupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginSignupViewController.h; sourceTree = "<group>"; };
-		A82E59742CA6C3780050A9C7 /* LoginSignupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginSignupViewController.m; sourceTree = "<group>"; };
 		A83C0F5C2C8B338A0046D1D6 /* WindCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		A83C0F622C8CF1280046D1D6 /* SunriseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunriseCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		A86D80CD2CA6D97400C5E4F3 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		A86D80CE2CA6D97400C5E4F3 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		A86D80D02CA6D9D400C5E4F3 /* SignupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
-		A86D80D12CA6D9D400C5E4F3 /* SignupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		A86D80D82CAABE0F00C5E4F3 /* LoginSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
+		A86D80DA2CAAC16800C5E4F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A86D80DC2CAAC22E00C5E4F3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = SOURCE_ROOT; };
 		A8B3C95E2C971B84001628B1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		A8B3C95F2C971B85001628B1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A8B3C9612C971BC0001628B1 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -208,18 +205,15 @@
 				A8E4D8EE2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift */,
 				A8E5D1B02C905B8B0084DECF /* DetailCollectionViewModel.swift */,
 				A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */,
+				A86D80D82CAABE0F00C5E4F3 /* LoginSignupViewController.swift */,
+				A86D80DA2CAAC16800C5E4F3 /* LoginViewController.swift */,
+				A86D80DC2CAAC22E00C5E4F3 /* SignUpViewController.swift */,
 				A8083CAF2C8844C8002E02E3 /* AppDelegate.h */,
 				A8083CB02C8844C8002E02E3 /* AppDelegate.m */,
 				A8083CB22C8844C8002E02E3 /* SceneDelegate.h */,
 				A8083CB32C8844C8002E02E3 /* SceneDelegate.m */,
 				A8083CB52C8844C8002E02E3 /* HomeViewController.h */,
 				A8083CB62C8844C8002E02E3 /* HomeViewController.m */,
-				A82E59732CA6C3780050A9C7 /* LoginSignupViewController.h */,
-				A82E59742CA6C3780050A9C7 /* LoginSignupViewController.m */,
-				A86D80D02CA6D9D400C5E4F3 /* SignupViewController.h */,
-				A86D80D12CA6D9D400C5E4F3 /* SignupViewController.m */,
-				A86D80CD2CA6D97400C5E4F3 /* LoginViewController.h */,
-				A86D80CE2CA6D97400C5E4F3 /* LoginViewController.m */,
 				A8CE296C2C91381A00AE814E /* WeatherModel.h */,
 				A8CE296D2C91389900AE814E /* WeatherModel.m */,
 				A8CE296B2C9137B600AE814E /* WeatherModelDelegate.h */,
@@ -468,12 +462,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8E4D8F12C8AE2A40053AAF8 /* HumidityCollectionViewCell.swift in Sources */,
-				A86D80CF2CA6D97400C5E4F3 /* LoginViewController.m in Sources */,
 				A8E5D1AF2C903D200084DECF /* AppConstants.swift in Sources */,
-				A82E59752CA6C3780050A9C7 /* LoginSignupViewController.m in Sources */,
 				A8083CC52C8844CB002E02E3 /* main.m in Sources */,
 				A8083CFA2C89A737002E02E3 /* Models.swift in Sources */,
-				A86D80D22CA6D9D400C5E4F3 /* SignupViewController.m in Sources */,
+				A86D80DD2CAAC22E00C5E4F3 /* SignUpViewController.swift in Sources */,
 				A83C0F5D2C8B338A0046D1D6 /* WindCollectionViewCell.swift in Sources */,
 				A8CE29712C917A7700AE814E /* utils.swift in Sources */,
 				A803AC332C8F01D7009D61F9 /* CoreDataManager.swift in Sources */,
@@ -481,6 +473,7 @@
 				A8E4D8EF2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift in Sources */,
 				A803AC2D2C8EF3CD009D61F9 /* WeatherAPIManager.swift in Sources */,
 				A83C0F632C8CF1280046D1D6 /* SunriseCollectionViewCell.swift in Sources */,
+				A86D80DB2CAAC16800C5E4F3 /* LoginViewController.swift in Sources */,
 				A8083CB72C8844C8002E02E3 /* HomeViewController.m in Sources */,
 				A8083CF62C899925002E02E3 /* NetworkManager.swift in Sources */,
 				A8243BD62C8DC99200842CE7 /* SunsetCollectionViewCell.swift in Sources */,
@@ -490,6 +483,7 @@
 				A8083CF02C885F57002E02E3 /* DetailCollectionViewController.swift in Sources */,
 				A8083CB12C8844C8002E02E3 /* AppDelegate.m in Sources */,
 				A8083CB42C8844C8002E02E3 /* SceneDelegate.m in Sources */,
+				A86D80D92CAABE0F00C5E4F3 /* LoginSignupViewController.swift in Sources */,
 				A8CE296E2C91389900AE814E /* WeatherModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
