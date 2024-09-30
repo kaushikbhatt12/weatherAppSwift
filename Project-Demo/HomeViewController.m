@@ -54,10 +54,23 @@
     }
 }
 
+- (IBAction)logoutButtonTapped:(id)sender {
+    [FirebaseAuthManager.shared logoutWithCompletion:^(NSError * _Nullable error) {
+        if (error) {
+            [self showAlertWithTitle:Messages.ERROR message:Messages.FAILED_LOG_OUT];
+        } else {
+            // Transition back to LoginSignUpViewController
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:AppConstants.STORY_BOARD_NAME bundle:nil];
+            LoginSignupViewController *loginSignupVC = [storyboard instantiateViewControllerWithIdentifier:AppConstants.LOGIN_SIGNUP_CONTROLLER];
+            loginSignupVC.modalPresentationStyle = UIModalPresentationFullScreen;
+            [self presentViewController:loginSignupVC animated:YES completion:nil];
+        }
+    }];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:AppConstants.SHOW_WEATHER]) {
         DetailCollectionViewController *destinationVC = (DetailCollectionViewController *)segue.destinationViewController;
-        
         DetailCollectionViewModel * viewModel = [[DetailCollectionViewModel alloc] init];
         
         destinationVC.viewModel = viewModel;

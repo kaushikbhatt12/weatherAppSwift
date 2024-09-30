@@ -11,6 +11,12 @@
         }
       }
     },
+    "Enter email" : {
+
+    },
+    "Enter password" : {
+
+    },
     "Error" : {
       "localizations" : {
         "de" : {
@@ -30,6 +36,9 @@
           }
         }
       }
+    },
+    "Failed to log out." : {
+
     },
     "Get Weather" : {
       "localizations" : {
@@ -51,6 +60,9 @@
         }
       }
     },
+    "Login" : {
+
+    },
     "OK" : {
       "localizations" : {
         "de" : {
@@ -70,6 +82,12 @@
           }
         }
       }
+    },
+    "Please enter both email and password" : {
+
+    },
+    "Signup" : {
+
     },
     "Sunrise" : {
       "localizations" : {
