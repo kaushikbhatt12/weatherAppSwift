@@ -20,8 +20,14 @@ import Foundation
     @objc static let CELL = "Cell"
     @objc static let CITY_NOT_FOUND = "CityNotFound"
     @objc static let FONT_STYLE = "Noteworthy-Bold"
+    @objc static let STORY_BOARD_NAME = "Main"
     @objc static let FONT_SIZE = 20
     @objc static let TEMPERATURE_CONSTANT : CGFloat = 273.15
+    @objc static let LOGIN_SIGNUP_CONTROLLER = "LoginSignupViewController"
+    @objc static let HOME_NAVIGATION_VIEW_CONTROLLER = "HomeNavigationViewController"
+    @objc static let BACK_ICON = "✖️"
+    @objc static let FONT_COPPER_PLATE = "Copperplate-Bold"
+    @objc static let LOGIN_SIGN_UP_BACKGROUND_IMAGE = "loginSignupBackground"
 }
 
 @objc class CELL_LABEL: NSObject {
@@ -68,6 +74,12 @@ struct ApiConstants {
     @objc static let ERROR_SAVING_CITY_DATA = "Error saving city data to Core Data:"
     @objc static let FAILED_FETCH = "Failed to fetch city:"
     @objc static let SAVED_WEATHER_AND_CITY_DATA = "City and weather data with timestamp saved for"
+    @objc static let FAILED_LOG_OUT = NSLocalizedString("Failed to log out.",comment: "")
+    @objc static let ENTER_EMAIL = NSLocalizedString("Enter email",comment: "")
+    @objc static let ENTER_PASSWORD = NSLocalizedString("Enter password",comment: "")
+    @objc static let LOGIN = NSLocalizedString("Login",comment: "")
+    @objc static let SIGNUP = NSLocalizedString("Signup",comment: "")
+    @objc static let ENTER_EMAIL_AND_PASSWORD = NSLocalizedString("Please enter both email and password",comment: "")
 }
 
 @objc class LAYOUT_CONSTANTS : NSObject {

@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import "Project_Demo-Swift.h"
 
 @interface HomeViewController : UIViewController
 
@@ -9,6 +8,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *getWeatherButton;
 
+- (IBAction)logoutButtonTapped:(id)sender;
 
 - (IBAction)getWeather:(id)sender;
 

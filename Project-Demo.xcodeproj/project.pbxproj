@@ -30,8 +30,16 @@
 		A8083CFA2C89A737002E02E3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8083CF92C89A737002E02E3 /* Models.swift */; };
 		A8243BD62C8DC99200842CE7 /* SunsetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8243BD52C8DC99200842CE7 /* SunsetCollectionViewCell.swift */; };
 		A8243BD92C8DD95900842CE7 /* WeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8243BD82C8DD95900842CE7 /* WeatherDataManager.swift */; };
+		A82E59622CA6B7F00050A9C7 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82E59612CA6B7F00050A9C7 /* FirebaseAuthManager.swift */; };
+		A82E59702CA6BCD00050A9C7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A82E596F2CA6BCD00050A9C7 /* FirebaseAuth */; };
+		A82E59722CA6C1C30050A9C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A82E59712CA6C1C30050A9C7 /* GoogleService-Info.plist */; };
 		A83C0F5D2C8B338A0046D1D6 /* WindCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C0F5C2C8B338A0046D1D6 /* WindCollectionViewCell.swift */; };
 		A83C0F632C8CF1280046D1D6 /* SunriseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C0F622C8CF1280046D1D6 /* SunriseCollectionViewCell.swift */; };
+		A86D80D92CAABE0F00C5E4F3 /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86D80D82CAABE0F00C5E4F3 /* LoginSignupViewController.swift */; };
+		A86D80DB2CAAC16800C5E4F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86D80DA2CAAC16800C5E4F3 /* LoginViewController.swift */; };
+		A86D80DD2CAAC22E00C5E4F3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86D80DC2CAAC22E00C5E4F3 /* SignUpViewController.swift */; };
+		A86D80DF2CAACB9B00C5E4F3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86D80DE2CAACB9B00C5E4F3 /* LoginViewModel.swift */; };
+		A86D80E12CAAD3CF00C5E4F3 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86D80E02CAAD3CF00C5E4F3 /* SignupViewModel.swift */; };
 		A8B3C9622C971BC0001628B1 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A8B3C9612C971BC0001628B1 /* Localizable.xcstrings */; };
 		A8CE296E2C91389900AE814E /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CE296D2C91389900AE814E /* WeatherModel.m */; };
 		A8CE29712C917A7700AE814E /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CE29702C917A7700AE814E /* utils.swift */; };
@@ -94,8 +102,15 @@
 		A8243BE72C8DE11500842CE7 /* WeatherData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		A8243BE82C8DE11500842CE7 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		A8243BE92C8DE11500842CE7 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		A82E59612CA6B7F00050A9C7 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		A82E59712CA6C1C30050A9C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A83C0F5C2C8B338A0046D1D6 /* WindCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		A83C0F622C8CF1280046D1D6 /* SunriseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunriseCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		A86D80D82CAABE0F00C5E4F3 /* LoginSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
+		A86D80DA2CAAC16800C5E4F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A86D80DC2CAAC22E00C5E4F3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = SOURCE_ROOT; };
+		A86D80DE2CAACB9B00C5E4F3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A86D80E02CAAD3CF00C5E4F3 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		A8B3C95E2C971B84001628B1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		A8B3C95F2C971B85001628B1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A8B3C9612C971BC0001628B1 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -115,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8CE29772C91992E00AE814E /* SDWebImageMapKit in Frameworks */,
+				A82E59702CA6BCD00050A9C7 /* FirebaseAuth in Frameworks */,
 				A8CE29752C91992E00AE814E /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +193,7 @@
 		A8083CAE2C8844C8002E02E3 /* Project-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				A82E59602CA6B7CC0050A9C7 /* FirebaseAuthManager */,
 				A8CE296F2C917A5200AE814E /* Utils */,
 				A8E5D1B22C906E600084DECF /* APILayer */,
 				A8083CF82C89A709002E02E3 /* Models */,
@@ -192,6 +209,11 @@
 				A8E4D8EE2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift */,
 				A8E5D1B02C905B8B0084DECF /* DetailCollectionViewModel.swift */,
 				A8083CEF2C885F57002E02E3 /* DetailCollectionViewController.swift */,
+				A86D80D82CAABE0F00C5E4F3 /* LoginSignupViewController.swift */,
+				A86D80DA2CAAC16800C5E4F3 /* LoginViewController.swift */,
+				A86D80DE2CAACB9B00C5E4F3 /* LoginViewModel.swift */,
+				A86D80E02CAAD3CF00C5E4F3 /* SignupViewModel.swift */,
+				A86D80DC2CAAC22E00C5E4F3 /* SignUpViewController.swift */,
 				A8083CAF2C8844C8002E02E3 /* AppDelegate.h */,
 				A8083CB02C8844C8002E02E3 /* AppDelegate.m */,
 				A8083CB22C8844C8002E02E3 /* SceneDelegate.h */,
@@ -205,6 +227,7 @@
 				A8083CBE2C8844CB002E02E3 /* Assets.xcassets */,
 				A8083CC02C8844CB002E02E3 /* LaunchScreen.storyboard */,
 				A8083CC32C8844CB002E02E3 /* Info.plist */,
+				A82E59712CA6C1C30050A9C7 /* GoogleService-Info.plist */,
 				A8083CC42C8844CB002E02E3 /* main.m */,
 				A8083CEC2C885F56002E02E3 /* Project-Demo-Bridging-Header.h */,
 				A8083CED2C885F56002E02E3 /* Project-DemoTests-Bridging-Header.h */,
@@ -266,6 +289,14 @@
 			path = "Weather Data Manager";
 			sourceTree = "<group>";
 		};
+		A82E59602CA6B7CC0050A9C7 /* FirebaseAuthManager */ = {
+			isa = PBXGroup;
+			children = (
+				A82E59612CA6B7F00050A9C7 /* FirebaseAuthManager.swift */,
+			);
+			path = FirebaseAuthManager;
+			sourceTree = "<group>";
+		};
 		A8B3C9602C971BAA001628B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +340,7 @@
 			packageProductDependencies = (
 				A8CE29742C91992E00AE814E /* SDWebImage */,
 				A8CE29762C91992E00AE814E /* SDWebImageMapKit */,
+				A82E596F2CA6BCD00050A9C7 /* FirebaseAuth */,
 			);
 			productName = "Project-Demo";
 			productReference = A8083CAC2C8844C8002E02E3 /* Project-Demo.app */;
@@ -387,6 +419,7 @@
 			mainGroup = A8083CA32C8844C8002E02E3;
 			packageReferences = (
 				A8CE29732C91992E00AE814E /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				A82E596E2CA6BCD00050A9C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = A8083CAD2C8844C8002E02E3 /* Products */;
 			projectDirPath = "";
@@ -409,6 +442,7 @@
 				A8083CBF2C8844CB002E02E3 /* Assets.xcassets in Resources */,
 				A8083CC22C8844CB002E02E3 /* Base in Resources */,
 				A8083CBA2C8844C8002E02E3 /* Base in Resources */,
+				A82E59722CA6C1C30050A9C7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +471,7 @@
 				A8E5D1AF2C903D200084DECF /* AppConstants.swift in Sources */,
 				A8083CC52C8844CB002E02E3 /* main.m in Sources */,
 				A8083CFA2C89A737002E02E3 /* Models.swift in Sources */,
+				A86D80DD2CAAC22E00C5E4F3 /* SignUpViewController.swift in Sources */,
 				A83C0F5D2C8B338A0046D1D6 /* WindCollectionViewCell.swift in Sources */,
 				A8CE29712C917A7700AE814E /* utils.swift in Sources */,
 				A803AC332C8F01D7009D61F9 /* CoreDataManager.swift in Sources */,
@@ -444,14 +479,19 @@
 				A8E4D8EF2C8ADA9F0053AAF8 /* TemperatureCollectionViewCell.swift in Sources */,
 				A803AC2D2C8EF3CD009D61F9 /* WeatherAPIManager.swift in Sources */,
 				A83C0F632C8CF1280046D1D6 /* SunriseCollectionViewCell.swift in Sources */,
+				A86D80DB2CAAC16800C5E4F3 /* LoginViewController.swift in Sources */,
+				A86D80DF2CAACB9B00C5E4F3 /* LoginViewModel.swift in Sources */,
 				A8083CB72C8844C8002E02E3 /* HomeViewController.m in Sources */,
 				A8083CF62C899925002E02E3 /* NetworkManager.swift in Sources */,
 				A8243BD62C8DC99200842CE7 /* SunsetCollectionViewCell.swift in Sources */,
 				A8E5D1B12C905B8B0084DECF /* DetailCollectionViewModel.swift in Sources */,
+				A82E59622CA6B7F00050A9C7 /* FirebaseAuthManager.swift in Sources */,
 				A8243BD92C8DD95900842CE7 /* WeatherDataManager.swift in Sources */,
+				A86D80E12CAAD3CF00C5E4F3 /* SignupViewModel.swift in Sources */,
 				A8083CF02C885F57002E02E3 /* DetailCollectionViewController.swift in Sources */,
 				A8083CB12C8844C8002E02E3 /* AppDelegate.m in Sources */,
 				A8083CB42C8844C8002E02E3 /* SceneDelegate.m in Sources */,
+				A86D80D92CAABE0F00C5E4F3 /* LoginSignupViewController.swift in Sources */,
 				A8CE296E2C91389900AE814E /* WeatherModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,6 +687,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -678,6 +719,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -816,6 +858,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A82E596E2CA6BCD00050A9C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.10.0;
+			};
+		};
 		A8CE29732C91992E00AE814E /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -827,6 +877,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A82E596F2CA6BCD00050A9C7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A82E596E2CA6BCD00050A9C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
 		A8CE29742C91992E00AE814E /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A8CE29732C91992E00AE814E /* XCRemoteSwiftPackageReference "SDWebImage" */;
